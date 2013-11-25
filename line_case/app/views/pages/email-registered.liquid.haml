@@ -7,7 +7,9 @@ published: true
 {% block 'main' %}
 .row
 
-  .alert-box.success{ data: { alert: '' } }
-    %h3.text-center Congratulations, your email address has been registered!
+  .alert-box.success.text-center{ data: { alert: '' } }
+    {% editable_text message %}
+    %h3 Congratulations, your email address has been registered!
+    {% endeditable_text %}
 
 {% endblock %}

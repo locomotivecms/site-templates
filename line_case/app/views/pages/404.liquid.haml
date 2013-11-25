@@ -6,6 +6,10 @@ published: true
 
 {% block 'main' %}
 .row
-  .panel
-    %h3.text-center Arrggggh, page not found
+
+  .panel.text-center
+    {% editable_text message %}
+    %h3 Arrggggh, page not found
+    {% endeditable_text %}
+
 {% endblock %}
