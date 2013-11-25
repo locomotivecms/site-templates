@@ -37,7 +37,7 @@ fields:
 - category: # Name of the field
     label: Category
     type: belongs_to
-    required: true
+    required: false
     hint: A description of the field for the editors
     # Slug of the target content type (eg post if this content type is a comment)
     class_name: categories

@@ -1,7 +1,7 @@
 # The name of this site
 # This text displays in the back-office and
 # can be used in templates through the site.name global variable
-name: linecase
+name: LineCase
 
 # The site's subdomain
 # This option is for sites on multi-site engines
