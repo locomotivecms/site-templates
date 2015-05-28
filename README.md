@@ -20,6 +20,18 @@ Freelancer is a one page Bootstrap portfolio theme for freelancers. This theme i
 
 ## Cleanblog
 
+### Source
+
+[http://startbootstrap.com/template-overviews/clean-blog/](http://startbootstrap.com/template-overviews/clean-blog/)
+
+### Description
+
+Clean blog is a carefully styled Bootstrap blog theme that is perfect for personal or company blogs. This theme features four HTML pages including a blog index, an about page, a sample post, and a contact page.
+
+### License & Author Details
+
+[Apache 2.0](https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE) by [Start Bootstrap](http://startbootstrap.com)
+
 ## LineCase (in progress)
 
 - Designer: [Blaz Robar](http://www.blazrobar.com), a graphic designer from Melbourne, Australia

@@ -1,0 +1,43 @@
+---
+title: Home page
+published: true
+handle: home
+---
+{% extends layouts/page %}
+
+{% block content/main %}
+
+{% with_scope date.lte: today %}
+{% paginate contents.posts by 2 %}
+{% for post in paginate.collection %}
+.post-preview
+  %a{ href: '{% path_to post %}' }
+    %h2.post-title {{ post.title }}
+    {% if post.subtitle %}
+    %h3.post-subtitle {{ post.subtitle }}
+    {% endif %}
+
+  %p.post-meta Posted by {{ post.author }} on {{ post.date | format_date: "%B %-d, %Y" }}
+
+%hr
+
+{% endfor %}
+
+- # Pager
+{% if paginate.total_pages > 1 %}
+%ul.pager
+  {% if paginate.previous_page %}
+  %li.previous
+    %a{ href: '?page={{ paginate.previous_page }}' } &larr; Newer Posts
+  {% endif %}
+  {% if paginate.next_page %}
+  %li.next
+    %a{ href: '?page={{ paginate.next_page }}' } Older Posts &rarr;
+  {% endif %}
+{% endif %}
+
+{% endpaginate %}
+{% endwith_scope %}
+
+{% endblock %}
+

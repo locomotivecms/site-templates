@@ -1,0 +1,51 @@
+---
+title: Contact
+listed: true
+published: true
+position: 4
+editable_elements:
+  'content/header': '/samples/contact-bg.jpg'
+  'content/subheading': 'Have questions? I have answers (maybe).'
+---
+{% extends layouts/page %}
+
+{% block content/main %}
+
+%p Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!
+
+{% model_form "messages", id: "contactForm", action: '/contact.json' %}
+.row.control-group
+  .form-group.col-xs-12.floating-label-form-group.controls
+    %label Name
+    %input#name{ type: 'text', class: 'form-control', placeholder: 'Name', required: true, data: { validation_required_message: 'Please enter your name.' } }
+    %p.help-block.text-danger
+
+.row.control-group
+  .form-group.col-xs-12.floating-label-form-group.controls
+    %label Email Address
+    %input#email{ type: 'email', class: 'form-control', placeholder: 'Email Address', required: true, data: { validation_required_message: 'Please enter your email address.' } }
+    %p.help-block.text-danger
+
+.row.control-group
+  .form-group.col-xs-12.floating-label-form-group.controls
+    %label Phone Number
+    %input#phone{ type: 'tel', class: 'form-control', placeholder: 'Phone Number', required: true, data: { validation_required_message: 'Please enter your phone number.' } }
+    %p.help-block.text-danger
+
+.row.control-group
+  .form-group.col-xs-12.floating-label-form-group.controls
+    %label Message
+    %textarea#message{ type: 'tel', class: 'form-control', placeholder: 'Message', required: true, data: { validation_required_message: 'Please enter a message.' } }
+    %p.help-block.text-danger
+
+%br
+
+#success
+
+.row
+  .form-group.col-xs-12
+    %button{ type: 'submit', class: 'btn btn-default' } Send
+
+{% endmodel_form %}
+
+{% endblock %}

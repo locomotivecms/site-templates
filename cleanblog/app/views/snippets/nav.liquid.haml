@@ -1,0 +1,23 @@
+- # Navigation
+%nav.navbar.navbar-default.navbar-custom.navbar-fixed-top
+  .container-fluid
+    - # Brand and toggle get grouped for better mobile display -->
+    .navbar-header.page-scroll
+      %button{ type: 'button', class: 'navbar-toggle', data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-1' } }
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{ href: '{% path_to home %}' } {{ site.name }}
+
+    - # Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          {% link_to home %}
+        {% for page_in_nav in site.pages %}
+        {% if page_in_nav.depth == 1 %}
+        %li {% link_to page_in_nav %}
+        {% endif %}
+        {% endfor %}
+

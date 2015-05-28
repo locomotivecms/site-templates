@@ -1,0 +1,46 @@
+---
+title: Template
+listed: false
+published: true
+content_type: posts
+---
+{% extends layouts/default %}
+
+{% block content %}
+
+- # Post Header
+%header{ class: 'intro-header', style: "background-image: url({% if post.header_img.url %}{{ post.header_img.url }}{% else %}{{ 'default-header-bg.jpg' | theme_image_url }}{% endif %})" }
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+        .post-heading
+          %h1 {{ post.title }}
+          {% if post.subtitle %}
+          %h2.subheading {{ post.subtitle }}
+          {% endif %}
+          %span.meta Posted by {{ post.author }} on {{ post.date | format_date: "%B %-d, %Y" }}
+
+- # Post Content
+%article
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+        {{ post.body }}
+
+        %hr
+
+        %ul.pager
+          {% if post.previous %}
+          %li.previous
+            %a{ href: '{% path_to post.previous %}', data: { toggle: 'tooltip', placement: 'top', title: '{{ post.previous.title }}' } }
+              &larr; Previous Post
+          {% endif %}
+          {% if post.next %}
+          %li.next
+            %a{ href: '{% path_to post.next %}', data: { toggle: 'tooltip', placement: 'top', title: '{{ post.next.title }}' } }
+              Next Post &rarr;
+          {% endif %}
+
+%hr
+
+{% endblock %}

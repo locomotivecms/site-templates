@@ -1,0 +1,17 @@
+---
+title: Default layout
+is_layout: false
+---
+!!!
+%html{lang: "en"}
+
+  {% include head %}
+
+  %body
+
+    {% include nav %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include footer %}

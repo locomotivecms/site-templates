@@ -1,0 +1,24 @@
+- # Footer
+%footer
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+        %ul.list-inline.text-center
+          %li
+            %a{ href: '#' }
+              %span.fa-stack.fa-lg
+                %i.fa.fa-circle.fa-stack-2x
+                %i.fa.fa-rss.fa-stack-1x.fa-inverse
+
+
+        %p.copyright.text-muted
+          Copyright &copy; {{ site.title }} {{ now | format_date: '%Y' }}
+
+- # jQuery
+{{ 'jquery.min.js' | javascript_tag }}
+
+- # Bootstrap Core JavaScript
+{{ 'bootstrap.min.js' | javascript_tag }}
+
+- # Custom Theme JavaScript
+{{ 'clean-blog.js' | javascript_tag }}

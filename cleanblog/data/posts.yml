@@ -1,0 +1,28 @@
+- "Dinosaurs are extinct today":
+    subtitle: "...because they lacked opposable thumbs and the brainpower to build a space program."
+    author: "John Doe"
+    date: 2015/05/20 # YYYY/MM/DD
+    header_img: "/samples/post-bg.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    body: "<p>Natus eum impedit. Est illum enim earum assumenda voluptate aut eos. Corporis quia voluptatem autem.</p>"
+
+- "Sample 2":
+    subtitle: "Dolores fugit nemo voluptatem."
+    author: "John Doe"
+    date: 2015/05/21 # YYYY/MM/DD
+    header_img: null # Path to a file in the public/samples folder or to a remote and external file.
+    body: "<p>Occaecati ut officia ratione sed. Quas consequuntur laborum nulla. Explicabo magnam quis et ipsam odit ut et. In eos velit.</p>"
+
+- "Sample 3":
+    subtitle: "Qui sint aperiam omnis neque rem natus."
+    author: "John Doe"
+    date: 2015/04/04 # YYYY/MM/DD
+    header_img: null # Path to a file in the public/samples folder or to a remote and external file.
+    body: "<p>Occaecati quo qui sit velit inventore quisquam. Modi ex et esse veniam. Sit omnis in voluptatibus non autem laborum. Modi voluptas occaecati.</p>"
+
+- "Sample 4":
+    subtitle: "Ratione quisquam cum sit quis blanditiis."
+    author: "John Doe"
+    date: 2015/05/23 # YYYY/MM/DD
+    header_img: null # Path to a file in the public/samples folder or to a remote and external file.
+    body: "<p>Aspernatur et non assumenda quos dolores autem qui. Deserunt est sequi harum dolor. Nihil est illo. Voluptate dignissimos ut dicta eum.</p>"
+

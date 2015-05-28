@@ -1,0 +1,27 @@
+---
+title: Page layout
+---
+{% extends layouts/default %}
+
+{% block content %}
+
+- # Page Header
+%header{ class: 'intro-header', style: "background-image: url({% editable_file header %}/samples/home-bg.jpg{% endeditable_file %})" }
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+        .site-heading
+          %h1 {{ page.title }}
+          %hr.small
+          %span.subheading {% editable_text subheading %}Lorem ipsum{% endeditable_text %}
+
+- # Main Content
+.container
+  .row
+    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+      {% block main %}
+      {% endblock %}
+
+%hr
+
+{% endblock %}
