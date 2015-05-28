@@ -1,0 +1,41 @@
+- "Sample 1":
+    image: "/samples/portfolio/cabin.png" # Path to a file in the public/samples folder or to a remote and external file.
+    description: "<p>Quas eveniet nostrum consequatur. Quod est quis sequi numquam. Minima dicta aut excepturi qui et at maiores. Non quia autem totam. Dolorem aliquam aut ut sit itaque voluptates.</p>"
+    client: Acme Corp
+    date: 2014/10/15
+    category: Interface
+
+- "Sample 2":
+    image: "/samples/portfolio/circus.png" # Path to a file in the public/samples folder or to a remote and external file.
+    description: "<p>Sint voluptas impedit cum aut nulla et. Omnis ratione quisquam laudantium. Sed fugiat sed error. Incidunt ut aspernatur quidem debitis ad voluptatibus voluptas porro.</p>"
+    client: Acme Corp
+    date: 2014/10/15
+    category: Marketing
+
+# - "Sample 3":
+#     image: "http://placehold.it/900x650" # Path to a file in the public/samples folder or to a remote and external file.
+#     description: "<p>Eveniet repellat sit minus eaque dolores consequatur. Dolores est iure omnis sit veniam natus. Veniam autem molestiae consequatur doloribus. Blanditiis molestias non voluptatem cumque earum excepturi nemo. Aut quia dolorem expedita.</p>"
+#     client: Acme Corp
+#     date: 2014/10/15
+#     category: Interface
+
+# - "Sample 4":
+#     image: "http://placehold.it/900x650" # Path to a file in the public/samples folder or to a remote and external file.
+#     description: "<p>Doloremque ut rem eos hic sit culpa labore. Delectus officiis quo occaecati mollitia rerum qui. Non voluptatem accusamus modi qui aut. Impedit et deleniti aut fugit voluptatum esse. Et ut et quibusdam optio debitis.</p>"
+#     client: Acme Corp
+#     date: 2014/10/15
+#     category: Interface
+
+# - "Sample 5":
+#     image: "http://placehold.it/900x650" # Path to a file in the public/samples folder or to a remote and external file.
+#     description: "<p>Eveniet repellat sit minus eaque dolores consequatur. Dolores est iure omnis sit veniam natus. Veniam autem molestiae consequatur doloribus. Blanditiis molestias non voluptatem cumque earum excepturi nemo. Aut quia dolorem expedita.</p>"
+#     client: Acme Corp
+#     date: 2014/10/15
+#     category: Interface
+
+# - "Sample 6":
+#     image: "http://placehold.it/900x650" # Path to a file in the public/samples folder or to a remote and external file.
+#     description: "<p>Doloremque ut rem eos hic sit culpa labore. Delectus officiis quo occaecati mollitia rerum qui. Non voluptatem accusamus modi qui aut. Impedit et deleniti aut fugit voluptatum esse. Et ut et quibusdam optio debitis.</p>"
+#     client: Acme Corp
+#     date: 2014/10/15
+#     category: Interface

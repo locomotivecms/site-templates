@@ -1,0 +1,61 @@
+# Human readable name of this type
+name: Developers
+
+# Lowercase, underscored handle used to access this type
+slug: developers
+
+# Explanatory text displayed in the back-office
+description: A description of the content type for the editors
+
+# Slug of field used to identify entries by default, such as the title
+label_field_name: name
+
+# Valid values: manually, created_at, updated_at, or the slug of any field
+order_by: manually
+
+# Valid values: asc (ascending) and desc (descending). Set to asc by default.
+# order_direction: asc
+
+# Specify a field slug to group entries by that field in the back-office.
+# group_by: <your field>
+
+# Activate public 'create' API (e.g for a contact form)
+# public_submission_enabled: false
+
+# Array of emails to be notified of new entries made with the public API
+# public_submission_accounts: ['john@example.com']
+
+# A list describing each field
+fields:
+- name: # The lowercase, underscored name of the field
+    label: Name # Human readable name of the field
+    type: string
+    required: true
+    hint: Explanatory text displayed in the back office
+    localized: false
+
+- picture: # The lowercase, underscored name of the field
+    label: Picture # Human readable name of the field
+    type: file
+    required: false
+    hint: Explanatory text displayed in the back office
+    localized: false
+
+- teams: # The lowercase, underscored name of the field
+    label: Teams # Human readable name of the field
+    type: many_to_many
+    required: false
+    hint: Explanatory text displayed in the back office
+    localized: false    # Define the slug of the target content type
+    class_name: teams
+    inverse_of: teams
+    # If you want to manage the entries of the relationship directly from the source entry
+    ui_enabled: true
+
+- projects:
+    label: Projects
+    type: has_many
+    class_name: projects
+    ui_enabled: true
+    inverse_of: developer
+    hint: "Projects the developer worked on"

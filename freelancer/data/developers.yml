@@ -1,0 +1,12 @@
+- "Sample 1":
+    picture: null # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Sample 2":
+    picture: null # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Sample 3":
+    picture: null # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Sample 4":
+    picture: null # Path to a file in the public/samples folder or to a remote and external file.
+

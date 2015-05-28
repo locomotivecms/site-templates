@@ -1,0 +1,214 @@
+---
+title: Freelancer
+published: true
+---
+!!!
+%html{lang: "en"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{charset: "utf-8"}/
+    %title {{ site.name }}
+    %meta{content: "width=device-width, initial-scale=1, maximum-scale=1", name: "viewport"}/
+
+    %link{ href: "http://fonts.googleapis.com/css?family=Montserrat:400,700", rel: "stylesheet", type: "text/css" }
+    %link{ href: "http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic", rel: "stylesheet", type: "text/css" }
+    %link{ href: "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", rel: "stylesheet", type: "text/css" }
+
+
+    {{ 'bootstrap.min.css' | stylesheet_tag }}
+    {{ 'freelancer.css' | stylesheet_tag }}
+
+    /[if lt IE 9]
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
+    {% inline_editor %}
+
+  %body#page-top.index
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header.page-scroll
+          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: "#page-top" } {{ site.name }}
+        / Collect the nav links, forms, and other content for toggling
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          %ul.nav.navbar-nav.navbar-right
+            %li.hidden
+              %a{href: "#page-top"}
+            %li
+              %a{href: "#portfolio"} Portfolio
+            %li
+              %a{href: "#about"} About
+            %li
+              %a{href: "#contact"} Contact
+
+    %header
+      .container
+        .row
+          .col-lg-12
+            {% block header %}
+            %img.img-responsive{ src: "{% editable_file picture %}http://placehold.it/256x256{% endeditable_file %}" }
+            .intro-text
+              %span.name {% editable_text name, format: raw, rows: 1 %}John Doe{% endeditable_text %}
+              %hr.star-light
+              %span.skills {% editable_text skills format: raw, rows: 1 %}Web Developer - Wagon user{% endeditable_text %}
+            {% endblock %}
+
+    %section#portfolio
+      .container
+        .row
+          .col-lg-12.text-center
+            %h2 Portfolio
+            %hr.star-primary
+
+        .row
+          {% for project in contents.projects %}
+          .col-sm-4.portfolio-item
+            %a.portfolio-link{ href: "#portfolioModal1", data: { toggle: 'modal' } }
+              .caption
+                .caption-content
+                  %i.fa.fa-search-plus.fa-3x
+              %img.img-responsive{ src: "{{ project.image.url }}" }
+          {% endfor %}
+
+    %section.success#about
+      .container
+        {% block about %}
+        .row
+          .col-lg-12.text-center
+            %h2 About
+            %hr.star-light
+        .row
+          .col-lg-4.col-lg-offset-2
+            {% editable_text column_1, format: html %}
+            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempus sapien sed varius tempus. Vivamus viverra arcu nec augue blandit, in ultricies nibh lobortis. Aliquam erat volutpat.
+            {% endeditable_text %}
+          .col-lg-4
+            {% editable_text column_2, format: html %}
+            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempus sapien sed varius tempus. Vivamus viverra arcu nec augue blandit, in ultricies nibh lobortis. Aliquam erat volutpat.
+            {% endeditable_text %}
+        {% endblock %}
+
+    %section#contact
+      .container
+        .row
+          .col-lg-12.text-center
+            %h2 Contact Me
+            %hr.star-primary
+        .row
+          .col-lg-8.col-lg-offset-2
+            %form#contactForm{name: "sentMessage", novalidate: "", action: '{{contents.messages.public_submission_url}}.json' }
+              {% csrf_param %}
+              %input{ type: 'hidden', value: '/', name: 'success_callback' }
+              %input{ type: 'hidden', value: '/', name: 'error_callback' }
+
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  %label Name
+                  %input#name.form-control{"data-validation-required-message" => "Please enter your name.", placeholder: "Name", required: "", type: "text", name: 'content[name]'}
+                  %p.help-block.text-danger
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  %label Email Address
+                  %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", placeholder: "Email Address", required: "", type: "email", name: 'content[email]'}
+                  %p.help-block.text-danger
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  %label Phone Number
+                  %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", placeholder: "Phone Number", required: "", type: "tel", name: 'content[phone]'}
+                  %p.help-block.text-danger
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  %label Message
+                  %textarea#message.form-control{"data-validation-required-message" => "Please enter a message.", placeholder: "Message", required: "", rows: "5", name: 'content[message]'}
+                  %p.help-block.text-danger
+              %br
+              #success
+              .row
+                .form-group.col-xs-12
+                  %button.btn.btn-success.btn-lg{type: "submit"} Send
+
+    %footer.text-center
+      .footer-above
+        {% block footer %}
+        .container
+          .row
+            .footer-col.col-md-4
+              {% editable_text location, format: html %}
+              %h3 Location
+              %p
+                700 South Laflin Street
+                %br
+                Chicago, IL 60607
+              {% endeditable_text %}
+            .footer-col.col-md-4
+              %h3 Around the web
+              %ul.list-inline
+                - %w(facebook google-plus twitter linkedin dribbble).each do |social|
+                  %li
+                    %a.btn-social.btn-outline{ href: "{% editable_text #{social} %}#{social}{% endeditable_text %}" }
+                      %i.fa.fa-fw{ class: "fa-#{social}"}
+            .footer-col.col-md-4
+              {% editable_text about_freelancer %}
+              %h3 About Freelancer
+              %p
+                Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>
+              {% endeditable_text %}
+        {% endblock %}
+      .footer-below
+        .container
+          .row
+            .col-lg-12
+              Copyright &copy; John Doe {{ today | format_date: '%Y' }}
+
+    .scroll-top.page-scroll.visible-xs.visble-sm
+      %a.btn.btn-primary{ href: '#page-top' }
+        %i.fa.fa-chevron-up
+
+    {% for project in contents.projects %}
+    .portfolio-modal.modal.fade{ id: "portfolioModal1", tabindex: -1, role: 'dialog', aria: { hidden: true } }
+      .modal-content
+        .close-modal{ data: { dismiss: 'modal' } }
+          .lr
+            .rl
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .modal-body
+                %h2 {{ project.name }}
+                %hr.star-primary
+                  %img.img-responsive.img-centered{ src: '{{ project.image.url }}' }
+                  .text
+                    {{ project.description }}
+                  %ul.list-inline.item-details
+                    %li
+                      Client:
+                      %strong {{ project.client }}
+                    %li
+                      Date:
+                      %strong {{ project.date | format_date: '%Y' }}
+                    %li
+                      Category:
+                      %strong {{ project.category }}
+                  %button.btn.btn-default{ type: 'button', data: { dismiss: 'modal' } }
+                    %i.fa.fa-times
+                    Close
+    {% endfor %}
+
+    %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", type: "text/javascript"}
+    {{ 'bootstrap.min.js' | javascript_tag }}
+
+    %script{src: "//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js", type: "text/javascript"}
+
+    {{ 'classie.js' | javascript_tag }}
+    {{ 'cbpAnimatedHeader.js' | javascript_tag }}
+
+    {{ 'jqBootstrapValidation.js' | javascript_tag }}
+    {{ 'contact_me.js' | javascript_tag }}
+
+    {{ 'freelancer.js' | javascript_tag }}
+
