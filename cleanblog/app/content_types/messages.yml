@@ -11,22 +11,22 @@ description: A description of the content type for the editors
 label_field_name: name
 
 # Valid values: manually, created_at, updated_at, or the slug of any field
-order_by: manually
+order_by: created_at
 
 # Valid values: asc (ascending) and desc (descending). Set to asc by default.
-# order_direction: asc
+order_direction: desc
 
 # Specify a field slug to group entries by that field in the back-office.
 # group_by: <your field>
 
 # Activate public 'create' API (e.g for a contact form)
-# public_submission_enabled: false
+public_submission_enabled: true
 
 # Array of emails to be notified of new entries made with the public API
 # public_submission_accounts: ['john@example.com']
 
 # A list describing each field
-fields: 
+fields:
 - name: # The lowercase, underscored name of the field
     label: Name # Human readable name of the field
     type: string

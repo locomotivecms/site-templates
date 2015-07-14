@@ -4,16 +4,18 @@ listed: true
 published: true
 position: 4
 editable_elements:
-  'content/header': '/samples/contact-bg.jpg'
-  'content/subheading': 'Have questions? I have answers (maybe).'
+  'content/header/background': '/samples/contact-bg.jpg'
+  'content/header/subheading': 'Have questions? I have answers (maybe).'
 ---
 {% extends layouts/page %}
 
 {% block content/main %}
 
+{% editable_text instructions, rows: 4 %}
 %p Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!
+{% endeditable_text %}
 
-{% model_form "messages", id: "contactForm", action: '/contact.json' %}
+{% model_form "messages", id: "contactForm" %}
 .row.control-group
   .form-group.col-xs-12.floating-label-form-group.controls
     %label Name
