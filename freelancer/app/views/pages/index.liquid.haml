@@ -53,7 +53,7 @@ published: true
             {% block header %}
             %img.img-responsive{ src: "{% editable_file picture %}http://placehold.it/256x256{% endeditable_file %}" }
             .intro-text
-              %span.name {% editable_text name, format: raw, rows: 1 %}John Doe{% endeditable_text %}
+              %span.name {% capture name %}{% editable_text name, format: raw, rows: 1 %}John Doe{% endeditable_text %}{% endcapture %}{{ name }}
               %hr.star-light
               %span.skills {% editable_text skills format: raw, rows: 1 %}Web Developer - Wagon user{% endeditable_text %}
             {% endblock %}
@@ -101,36 +101,33 @@ published: true
             %hr.star-primary
         .row
           .col-lg-8.col-lg-offset-2
-            %form#contactForm{name: "sentMessage", novalidate: "", action: '{{contents.messages.public_submission_url}}.json' }
-              {% csrf_param %}
-              %input{ type: 'hidden', value: '/', name: 'success_callback' }
-              %input{ type: 'hidden', value: '/', name: 'error_callback' }
-
-              .row.control-group
-                .form-group.col-xs-12.floating-label-form-group.controls
-                  %label Name
-                  %input#name.form-control{"data-validation-required-message" => "Please enter your name.", placeholder: "Name", required: "", type: "text", name: 'content[name]'}
-                  %p.help-block.text-danger
-              .row.control-group
-                .form-group.col-xs-12.floating-label-form-group.controls
-                  %label Email Address
-                  %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", placeholder: "Email Address", required: "", type: "email", name: 'content[email]'}
-                  %p.help-block.text-danger
-              .row.control-group
-                .form-group.col-xs-12.floating-label-form-group.controls
-                  %label Phone Number
-                  %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", placeholder: "Phone Number", required: "", type: "tel", name: 'content[phone]'}
-                  %p.help-block.text-danger
-              .row.control-group
-                .form-group.col-xs-12.floating-label-form-group.controls
-                  %label Message
-                  %textarea#message.form-control{"data-validation-required-message" => "Please enter a message.", placeholder: "Message", required: "", rows: "5", name: 'content[message]'}
-                  %p.help-block.text-danger
-              %br
-              #success
-              .row
-                .form-group.col-xs-12
-                  %button.btn.btn-success.btn-lg{type: "submit"} Send
+            {% model_form 'messages', id: 'contactForm', json: true %}
+            .row.control-group
+              .form-group.col-xs-12.floating-label-form-group.controls
+                %label Name
+                %input#name.form-control{"data-validation-required-message" => "Please enter your name.", placeholder: "Name", required: "", type: "text", name: 'content[name]'}
+                %p.help-block.text-danger
+            .row.control-group
+              .form-group.col-xs-12.floating-label-form-group.controls
+                %label Email Address
+                %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", placeholder: "Email Address", required: "", type: "email", name: 'content[email]'}
+                %p.help-block.text-danger
+            .row.control-group
+              .form-group.col-xs-12.floating-label-form-group.controls
+                %label Phone Number
+                %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", placeholder: "Phone Number", required: "", type: "tel", name: 'content[phone]'}
+                %p.help-block.text-danger
+            .row.control-group
+              .form-group.col-xs-12.floating-label-form-group.controls
+                %label Message
+                %textarea#message.form-control{"data-validation-required-message" => "Please enter a message.", placeholder: "Message", required: "", rows: "5", name: 'content[message]'}
+                %p.help-block.text-danger
+            %br
+            #success
+            .row
+              .form-group.col-xs-12
+                %button.btn.btn-success.btn-lg{type: "submit"} Send
+            {% endmodel_form %}
 
     %footer.text-center
       .footer-above
@@ -150,7 +147,7 @@ published: true
               %ul.list-inline
                 - %w(facebook google-plus twitter linkedin dribbble).each do |social|
                   %li
-                    %a.btn-social.btn-outline{ href: "{% editable_text #{social} %}#{social}{% endeditable_text %}" }
+                    %a.btn-social.btn-outline{ href: "{% editable_text #{social}, inline_editing: false, format: raw, rows: 1 %}#{social}{% endeditable_text %}" }
                       %i.fa.fa-fw{ class: "fa-#{social}"}
             .footer-col.col-md-4
               {% editable_text about_freelancer %}
@@ -163,7 +160,7 @@ published: true
         .container
           .row
             .col-lg-12
-              Copyright &copy; John Doe {{ today | format_date: '%Y' }}
+              Copyright &copy; {{ name }} {{ today | format_date: '%Y' }}
 
     .scroll-top.page-scroll.visible-xs.visble-sm
       %a.btn.btn-primary{ href: '#page-top' }
