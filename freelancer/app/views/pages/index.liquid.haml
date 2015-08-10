@@ -1,6 +1,7 @@
 ---
 title: Freelancer
 published: true
+handle: home
 ---
 !!!
 %html{lang: "en"}
@@ -13,7 +14,6 @@ published: true
     %link{ href: "http://fonts.googleapis.com/css?family=Montserrat:400,700", rel: "stylesheet", type: "text/css" }
     %link{ href: "http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic", rel: "stylesheet", type: "text/css" }
     %link{ href: "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", rel: "stylesheet", type: "text/css" }
-
 
     {{ 'bootstrap.min.css' | stylesheet_tag }}
     {{ 'freelancer.css' | stylesheet_tag }}
@@ -35,16 +35,19 @@ published: true
             %span.icon-bar
           %a.navbar-brand{href: "#page-top" } {{ site.name }}
         / Collect the nav links, forms, and other content for toggling
+        {% capture home_path %}{% path_to home %}{% endcapture %}
         .collapse.navbar-collapse#bs-example-navbar-collapse-1
           %ul.nav.navbar-nav.navbar-right
             %li.hidden
-              %a{href: "#page-top"}
+              %a{href: "{{ home_path }}#page-top"}
             %li
-              %a{href: "#portfolio"} Portfolio
+              %a{href: "{{ home_path }}#portfolio"} Portfolio
             %li
-              %a{href: "#about"} About
+              %a{href: "{{ home_path }}#about"} About
             %li
-              %a{href: "#contact"} Contact
+              %a{href: "{{ home_path }}#contact"} Contact
+
+    {% block main %}
 
     %header
       .container
@@ -129,6 +132,8 @@ published: true
                 %button.btn.btn-success.btn-lg{type: "submit"} Send
             {% endmodel_form %}
 
+    {% endblock %}
+
     %footer.text-center
       .footer-above
         {% block footer %}
@@ -147,7 +152,7 @@ published: true
               %ul.list-inline
                 - %w(facebook google-plus twitter linkedin dribbble).each do |social|
                   %li
-                    %a.btn-social.btn-outline{ href: "{% editable_text #{social}, inline_editing: false, format: raw, rows: 1 %}#{social}{% endeditable_text %}" }
+                    %a.btn-social.btn-outline{ href: "{% editable_text #{social}, inline_editing: false, format: raw, rows: 1, fixed: true %}#{social}{% endeditable_text %}" }
                       %i.fa.fa-fw{ class: "fa-#{social}"}
             .footer-col.col-md-4
               {% editable_text about_freelancer %}

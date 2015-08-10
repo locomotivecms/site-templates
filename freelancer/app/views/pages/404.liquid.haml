@@ -5,6 +5,12 @@ published: true
 {% extends index %}
 
 {% block 'main' %}
-.jumbotron
-  %h1 Arrggggh, page not found
+%header
+  .container
+    .row
+      .col-lg-12
+        {% editable_text message %}
+        %h1 Arrggggh, page not found
+        {% endeditable_text %}
+
 {% endblock %}
