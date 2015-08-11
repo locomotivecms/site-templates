@@ -17,7 +17,7 @@ order_by: manually
 # order_direction: asc
 
 # Specify a field slug to group entries by that field in the back-office.
-group_by: developer
+group_by: category
 
 # Activate public 'create' API (e.g for a contact form)
 # public_submission_enabled: false
@@ -33,12 +33,6 @@ fields:
     required: true
     hint: Explanatory text displayed in the back office
     localized: false
-
-- developer:
-    label: Main developer
-    type: belongs_to
-    hint: The developer in charge of
-    class_name: developers
 
 - tags:
     label: My tags

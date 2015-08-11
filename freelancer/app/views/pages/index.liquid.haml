@@ -71,7 +71,7 @@ handle: home
         .row
           {% for project in contents.projects %}
           .col-sm-4.portfolio-item
-            %a.portfolio-link{ href: "#portfolioModal1", data: { toggle: 'modal' } }
+            %a.portfolio-link{ href: "#portfolioModal{{ forloop.index0 }}", data: { toggle: 'modal' } }
               .caption
                 .caption-content
                   %i.fa.fa-search-plus.fa-3x
@@ -172,7 +172,7 @@ handle: home
         %i.fa.fa-chevron-up
 
     {% for project in contents.projects %}
-    .portfolio-modal.modal.fade{ id: "portfolioModal1", tabindex: -1, role: 'dialog', aria: { hidden: true } }
+    .portfolio-modal.modal.fade{ id: "portfolioModal{{ forloop.index0 }}", tabindex: -1, role: 'dialog', aria: { hidden: true } }
       .modal-content
         .close-modal{ data: { dismiss: 'modal' } }
           .lr

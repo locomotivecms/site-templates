@@ -7,14 +7,14 @@ title: Page layout
 
 - # Page Header
 {% block header %}
-%header{ class: 'intro-header', style: "background-image: url({% editable_file background %}/samples/home-bg.jpg{% endeditable_file %})" }
+%header{ class: 'intro-header', style: "background-image: url({% editable_file background, priority: 1 %}/samples/home-bg.jpg{% endeditable_file %})" }
   .container
     .row
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
         .site-heading
           %h1 {{ page.title }}
           %hr.small
-          %span.subheading {% editable_text subheading, rows: 2 %}Lorem ipsum{% endeditable_text %}
+          %span.subheading {% editable_text subheading, rows: 2, priority: 2 %}Lorem ipsum{% endeditable_text %}
 {% endblock %}
 
 - # Main Content
