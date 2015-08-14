@@ -72,14 +72,3 @@ fields:
     #   en: ['option1_en', 'option2_en']
     #   fr: ['option1_fr', 'option2_fr']
     select_options: ['Hardware', 'Interface', 'Marketing']
-
-- tags:
-    label: My tags
-    type: tags
-    hint: Bla bla bla
-
-- published:
-    label: Published
-    type: boolean
-    hint: Bla bla bla bla
-
