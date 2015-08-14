@@ -34,20 +34,12 @@ fields:
     hint: Explanatory text displayed in the back office
     localized: false
 
-- tags:
-    label: My tags
-    type: tags
-    hint: Bla bla bla
-
-- hours:
-    label: Number of hours
-    type: integer
-    hint: bla bla bla
-
-- published:
-    label: Published
-    type: boolean
-    hint: Bla bla bla bla
+- image: # The lowercase, underscored name of the field
+    label: Image # Human readable name of the field
+    type: file
+    required: false
+    hint: Explanatory text displayed in the back office
+    localized: false
 
 - description: # The lowercase, underscored name of the field
     label: Description # Human readable name of the field
@@ -56,13 +48,6 @@ fields:
     hint: Explanatory text displayed in the back office
     localized: false
     text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
-
-- image: # The lowercase, underscored name of the field
-    label: Image # Human readable name of the field
-    type: file
-    required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
 
 - client: # The lowercase, underscored name of the field
     label: "Client's name" # Human readable name of the field
@@ -87,3 +72,14 @@ fields:
     #   en: ['option1_en', 'option2_en']
     #   fr: ['option1_fr', 'option2_fr']
     select_options: ['Hardware', 'Interface', 'Marketing']
+
+- tags:
+    label: My tags
+    type: tags
+    hint: Bla bla bla
+
+- published:
+    label: Published
+    type: boolean
+    hint: Bla bla bla bla
+
