@@ -25,6 +25,9 @@ public_submission_enabled: true
 # Array of emails to be notified of new entries made with the public API
 # public_submission_accounts: ['john@example.com']
 
+display_settings:
+  position: 2
+
 # A list describing each field
 fields:
 - name: # The lowercase, underscored name of the field

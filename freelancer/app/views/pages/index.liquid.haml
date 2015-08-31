@@ -36,16 +36,18 @@ handle: home
           %a.navbar-brand{href: "#page-top" } {{ site.name }}
         / Collect the nav links, forms, and other content for toggling
         {% capture home_path %}{% path_to home %}{% endcapture %}
+        {% block menu %}
         .collapse.navbar-collapse#bs-example-navbar-collapse-1
           %ul.nav.navbar-nav.navbar-right
             %li.hidden
               %a{href: "{{ home_path }}#page-top"}
             %li
-              %a{href: "{{ home_path }}#portfolio"} Portfolio
+              %a{href: "{{ home_path }}#portfolio"} {% editable_text portfolio, format: raw, rows: 1 %}Portfolio{% endeditable_text %}
             %li
-              %a{href: "{{ home_path }}#about"} About
+              %a{href: "{{ home_path }}#about"} {% editable_text about, format: raw, rows: 1 %}About{% endeditable_text %}
             %li
-              %a{href: "{{ home_path }}#contact"} Contact
+              %a{href: "{{ home_path }}#contact"} {% editable_text contact, format: raw, rows: 1 %}Contact{% endeditable_text %}
+        {% endblock %}
 
     {% block main %}
 
@@ -53,7 +55,7 @@ handle: home
       .container
         .row
           .col-lg-12
-            {% block header %}
+            {% block header, short_name: true %}
             %img.img-responsive{ src: "{% editable_file picture %}http://placehold.it/256x256{% endeditable_file %}" }
             .intro-text
               %span.name {% capture name %}{% editable_text name, format: raw, rows: 1 %}John Doe{% endeditable_text %}{% endcapture %}{{ name }}
@@ -63,12 +65,14 @@ handle: home
 
     %section#portfolio
       .container
+        {% block portfolio, short_name: true %}
         .row
           .col-lg-12.text-center
-            %h2 Portfolio
+            %h2 {% editable_text title, format: raw, rows: 1 %}Portfolio{% endeditable_text %}
             %hr.star-primary
 
         .row
+          {% editable_model "projects", hint: "Displayed in the portfolio" %}
           {% for project in contents.projects %}
           .col-sm-4.portfolio-item
             %a.portfolio-link{ href: "#portfolioModal{{ forloop.index0 }}", data: { toggle: 'modal' } }
@@ -77,13 +81,15 @@ handle: home
                   %i.fa.fa-search-plus.fa-3x
               %img.img-responsive{ src: "{{ project.image.url }}" }
           {% endfor %}
+          {% endeditable_model %}
+        {% endblock %}
 
     %section.success#about
       .container
-        {% block about %}
+        {% block about, short_name: true %}
         .row
           .col-lg-12.text-center
-            %h2 About
+            %h2 {% editable_text title, format: raw, rows: 1 %}About{% endeditable_text %}
             %hr.star-light
         .row
           .col-lg-4.col-lg-offset-2
@@ -98,9 +104,10 @@ handle: home
 
     %section#contact
       .container
+        {% block contact, short_name: true %}
         .row
           .col-lg-12.text-center
-            %h2 Contact Me
+            %h2 {% editable_text title, format: raw, rows: 1 %}Contact me{% endeditable_text %}
             %hr.star-primary
         .row
           .col-lg-8.col-lg-offset-2
@@ -131,6 +138,7 @@ handle: home
               .form-group.col-xs-12
                 %button.btn.btn-success.btn-lg{type: "submit"} Send
             {% endmodel_form %}
+        {% endblock %}
 
     {% endblock %}
 
@@ -148,14 +156,14 @@ handle: home
                 Chicago, IL 60607
               {% endeditable_text %}
             .footer-col.col-md-4
-              %h3 Around the web
+              %h3 {% editable_text "social links title", format: raw, rows: 1, fixed: true %}Around the web{% endeditable_text %}
               %ul.list-inline
                 - %w(facebook google-plus twitter linkedin dribbble).each do |social|
                   %li
                     %a.btn-social.btn-outline{ href: "{% editable_text #{social}, inline_editing: false, format: raw, rows: 1, fixed: true %}#{social}{% endeditable_text %}" }
                       %i.fa.fa-fw{ class: "fa-#{social}"}
             .footer-col.col-md-4
-              {% editable_text about_freelancer %}
+              {% editable_text template %}
               %h3 About Freelancer
               %p
                 Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>

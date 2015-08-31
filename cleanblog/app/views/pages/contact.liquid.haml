@@ -9,7 +9,7 @@ editable_elements:
 ---
 {% extends layouts/page %}
 
-{% block content/main %}
+{% block content/main, short_name: true %}
 
 {% editable_text instructions, rows: 4 %}
 %p Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!

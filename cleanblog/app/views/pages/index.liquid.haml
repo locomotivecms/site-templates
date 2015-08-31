@@ -5,7 +5,9 @@ handle: home
 ---
 {% extends layouts/page %}
 
-{% block content/main %}
+{% block content/main, short_name: true %}
+
+{% editable_model "posts", hint: "Display the two most recent posts" %}
 
 {% with_scope date.lte: today %}
 {% paginate contents.posts by 2 %}
@@ -38,6 +40,8 @@ handle: home
 
 {% endpaginate %}
 {% endwith_scope %}
+
+{% endeditable_model %}
 
 {% endblock %}
 
