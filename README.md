@@ -1,7 +1,6 @@
-Site templates
-==============
+# Site templates
 
-A collection of sites built by Wagon. They require at least Locomotive Engine 3.1.0.rc2 and Wagon 2.1.0.rc4.
+A collection of sites built by Wagon. They require at least Locomotive Engine 3.1.0.rc3 and Wagon 2.1.0.rc5.
 
 ## Shop
 
