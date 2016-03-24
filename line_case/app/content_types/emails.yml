@@ -19,6 +19,13 @@ order_by: created_at # default: manually, also available: created_at or any fiel
 # Display entries grouped by <field> in the backoffice
 # group_by: <your field>
 
+# Control the display of the content type in the back-office.
+display_settings:
+  seo: false              # display the SEO tab for the content entries
+  advanced: false         # display the Advanced tab for the content entries
+  position: 3             # position in the sidebar menu
+  # hidden: false           # hidden for authors?
+
 # Activate public 'create' API (e.g for a contact form)
 public_submission_enabled: true
 

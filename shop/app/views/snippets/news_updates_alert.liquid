@@ -1,0 +1,17 @@
+{% if customer_email_address %}
+  <div class="container customer-email-address-alert">
+    <div class="row">
+      <div class="col-md-12">
+        {% if customer_email_address.errors.size > 0 }
+        <div class="alert alert-warning">
+          <strong>Hey!</strong> You already subscribed to our newsletter.
+        </div>
+        {% else %}
+        <div class="alert alert-success">
+          <strong>Thanks!</strong> Your email address has been added to our newsletter.
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

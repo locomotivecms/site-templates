@@ -35,3 +35,16 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+window.hexToRgb = function(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+  } : null;
+}
+
+window.rgbaToString = function(color, alpha) {
+  return "rgba(" + color.r + ", " + color.g + ", " + color.b + ", " + alpha.toString() + ")" ;
+}

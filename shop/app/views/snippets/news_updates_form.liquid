@@ -1,0 +1,8 @@
+{% model_form 'customer_email_addresses', class: 'form-inline', success: '/', error: '/' %}
+
+  <div class="form-group">
+    <input name="content[email]" type="email" class="form-control" placeholder="Enter your email address">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+
+{% endmodel_form %}

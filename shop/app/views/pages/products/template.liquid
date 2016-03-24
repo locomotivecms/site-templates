@@ -1,0 +1,45 @@
+---
+title: Product template
+
+listed: false
+
+# true if the page is published
+published: true
+
+# content type that this page is templatizing
+content_type: products
+---
+{% extends layouts/default %}
+
+{% block content %}
+
+  <div class="container main-content">
+    <div class="row">
+      <div class="col-md-6 product-image">
+        <img src="{{ product.picture.url | resize: '600x600#' | default: 'http://placehold.it/600x600' }}" class="img-responsive" alt="{{ product.name }}">
+      </div>
+      <div class="col-md-6 product-description">
+        <h2>{{ product.name }}</h2>
+        <div class="description">
+          {{ product.description }}
+        </div>
+        <div class="price">
+          {{ product.price | money: unit: "$", format: "%u%n" }}
+        </div>
+        <div class="add-to-cart">
+          <a href="#"
+              class="btn btn-lg btn-default snipcart-add-item"
+              data-item-id="{{ product._id }}"
+              data-item-name="{{ product.name }}"
+              data-item-price="{{ product.price }}"
+              data-item-weight="{{ product.weight }}"
+              data-item-url="{{ base_url }}{% path_to product %}"
+              data-item-description="{{ product.short_description }}">
+            <i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Add to cart
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

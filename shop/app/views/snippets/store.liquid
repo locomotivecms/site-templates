@@ -1,0 +1,20 @@
+<h3>{{ site.metafields.my_store.name }}</h3>
+{% if site.metafields.my_store.phone_number %}
+<p>
+  <i class="fa fa-phone"></i>
+  &nbsp;
+  <a href="tel:{{ site.metafields.my_store.phone_number }}">{{ site.metafields.my_store.phone_number }}</a>
+</p>
+{% endif %}
+<p>
+  <i class="fa fa-home"></i>
+  &nbsp;
+  {{ site.metafields.my_store.address }}
+</p>
+{% if site.metafields.my_store.email %}
+<p>
+  <i class="fa fa-envelope"></i>
+  &nbsp;
+  <a href="email:{{ site.metafields.my_store.email }}">{{ site.metafields.my_store.email }}</a>
+</p>
+{% endif %}

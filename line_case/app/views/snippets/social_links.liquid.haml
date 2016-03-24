@@ -1,19 +1,26 @@
-{% if editing %}
-{% assign social_rss_url = "#" %}
-{% assign social_twitter_url = "#" %}
-{% assign social_dribbble_url = "#" %}
-{% assign social_linkedin_url = "#" %}
-{% endif %}
+/ {% if editing %}
+/ {% assign social_rss_url = "#" %}
+/ {% assign social_twitter_url = "#" %}
+/ {% assign social_dribbble_url = "#" %}
+/ {% assign social_linkedin_url = "#" %}
+/ {% endif %}
 
 #social.large-5.large-offset-1.columns
-  %a.rss{ href: '{{ social_rss_url }}' }
-    %i.fa.fa-rss
+  {% for metafield in site.metafields.social %}
+  {% if metafield.value %}
+  %a{ href: '{{ metafield.value }}', class: '{{ metafield.name }}' }
+    %i.fa{ class: "fa-{{ metafield.name }}" }
+  {% endif %}
+  {% endfor %}
 
-  %a.twitter{ href: '{{ social_twitter_url }}' }
-    %i.fa.fa-twitter
+  / %a.rss{ href: '{{ social_rss_url }}' }
+  /   %i.fa.fa-rss
 
-  %a.dribbble{ href: '{{ social_dribbble_url }}' }
-    %i.fa.fa-dribbble
+  / %a.twitter{ href: '{{ social_twitter_url }}' }
+  /   %i.fa.fa-twitter
 
-  %a.linkedin{ href: '{{ social_linkedin_url }}' }
-    %i.fa.fa-linkedin
+  / %a.dribbble{ href: '{{ social_dribbble_url }}' }
+  /   %i.fa.fa-dribbble
+
+  / %a.linkedin{ href: '{{ social_linkedin_url }}' }
+  /   %i.fa.fa-linkedin

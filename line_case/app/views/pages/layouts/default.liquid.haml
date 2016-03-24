@@ -1,0 +1,75 @@
+---
+title: Default layout
+published: true
+is_layout: false
+---
+!!!
+/[if IE 8] <html class="no-js lt-ie9" lang="en" >
+/ [if gt IE 8]><!
+%html.no-js{lang: "en"}
+  / <![endif]
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width", name: "viewport"}/
+
+    %link{ href: 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300', rel: 'stylesheet', type: 'text/css' }
+
+    %link{ href: '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel: 'stylesheet', type: 'text/css' }
+
+    {{ 'normalize.css' | stylesheet_tag }}
+    {{ 'foundation.min.css' | stylesheet_tag }}
+    {{ 'pages.css' | stylesheet_tag }}
+
+    {{ 'vendor/custom.modernizr.js' | javascript_tag }}
+
+    {{ 'vendor/zepto.js' | javascript_tag }}
+    {{ 'foundation.min.js' | javascript_tag }}
+
+    {% include 'theme_css' %}
+
+    {% seo %}
+
+  %body
+    %header
+      #background-image
+
+      #logo.row
+        .small-12.columns
+          %h1
+            __
+            %a{ href: '/' }> {{ site.name }}
+
+      #banner.row
+        .small-12.columns
+          {% editable_text header, fixed: true %}
+          %h2 DEMO LOCOMOTIVECMS
+          %p
+            An example of how to use content types
+            %br
+            and editable elements for a portfolio website.
+          {% endeditable_text %}
+
+    .row
+
+    #content
+      {% block main %}
+      {% endblock %}
+
+    %footer
+      .row
+        #contact.small-12.large-6.columns
+          .row
+            .small-12.large-12.columns
+              %h1 {{ site.name }}
+
+              {% editable_text newsletter, fixed: true %}
+              %p
+                About the designer: Blaz Robar is a graphic designer from Melbourne, Australia. More information about him <a href="http://www.blazrobar.com">here</a>.
+              {% endeditable_text %}
+
+          {% include newsletter_form %}
+
+        {% include social_links %}
+
+    :javascript
+      Zepto(function($){ $(document).foundation() })

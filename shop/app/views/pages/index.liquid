@@ -1,0 +1,39 @@
+---
+title: Home page
+published: true
+handle: home
+---
+{% extends 'layouts/default' %}
+
+{% block content %}
+
+{% block jumbotron %}
+<div class="banner" style="background-image: url({% editable_file banner %}/samples/pages/banner.jpg{% endeditable_file %})">
+  <div class="container">
+    <div class="jumbotron" >
+      {% editable_text jumbotron, rows: 5, priority: 1 %}
+        <h2>A Locomotive e-commerce site</h2>
+        <p>This is a simple e-commerce website powered by Locomotive and Snipcart</p>
+      {% endeditable_text %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block featured_products %}
+<div class="container main-content">
+  <div class="row">
+    <h2 class="page-title">{% editable_text title, inline: true, rows: 1 %}Our featured products{% endeditable_text %}</h2>
+
+    {% editable_model 'products', hint: 'Only products with the featured attribute toggled on are displayed' %}
+      {% with_scope featured: true %}
+        {% for product in contents.products %}
+          {% include 'product' with product %}
+        {% endfor %}
+      {% endwith_scope %}
+    {% endeditable_model %}
+  </div>
+</div>
+{% endblock %}
+
+{% endblock %}

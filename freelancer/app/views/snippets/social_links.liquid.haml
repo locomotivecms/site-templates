@@ -1,0 +1,8 @@
+%ul.list-inline
+  {% for metafield in site.metafields.social %}
+  {% if metafield.value %}
+  %li
+    %a{ href: "{{ metafield.value }}" }
+      %i.fa.fa-fw{ class: "fa-{{ metafield.name }}"}
+  {% endif %}
+  {% endfor %}

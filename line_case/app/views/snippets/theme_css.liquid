@@ -1,0 +1,18 @@
+<style>
+  /* THEME CUSTOM STYLE */
+
+  {% assign color = site.metafields.theme.main_color %}
+  {% if color %}
+  #content h2, #content h3, #content h4, #content h5 { color: {{ color }}; }
+  {% endif %}
+
+  {% assign color = site.metafields.theme.header_background_color %}
+  {% if color %}
+  header { background: {{ color }}; }
+  {% endif %}
+
+  {% assign image = site.metafields.theme.header_background_pattern %}
+  {% if image %}
+  #background-image { background-image: url("{{ image }}"); }
+  {% endif %}
+</style>

@@ -1,0 +1,23 @@
+---
+title: Simple
+is_layout: true
+---
+{% extends 'layouts/default' %}
+
+{% block content %}
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="page-title">{% editable_text title, inline: true, rows: 1 %}Title goes here{% endeditable_text %}</h2>
+      <div class="body">
+        {% editable_text body, rows: 15 %}
+        <p><a href="#">Maxime</a> incidunt perspiciatis architecto sunt voluptates iusto autem. At repellat quo perferendis aut et necessitatibus reprehenderit. Sint id fuga incidunt corrupti. Voluptatem expedita dolores vel eos. Et nihil saepe minima facilis nihil quis.</p>
+        <p>Maxime incidunt perspiciatis architecto sunt voluptates iusto autem. At repellat quo perferendis aut et necessitatibus reprehenderit. Sint id fuga incidunt corrupti. Voluptatem expedita dolores vel eos. Et nihil saepe minima facilis nihil quis.</p>
+        {% endeditable_text %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

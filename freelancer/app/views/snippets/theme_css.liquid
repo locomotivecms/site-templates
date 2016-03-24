@@ -1,0 +1,73 @@
+{% assign main_color = site.metafields.theme.main_color %}
+{% assign alt_color = site.metafields.theme.alt_color %}
+{% if main_color or alt_color %}
+<style>
+  {% if main_color %}
+  body { color: {{ main_color }}; }
+  legend { color: {{ main_color }}; }
+  output { color: {{ main_color }}; }
+
+  .text-primar y{ color: {{ main_color }}; }
+  .bg-primary { background-color:{{ main_color }}; }
+  .form-control { color: {{ main_color }}; }
+  .form-control:focus { border-color: {{ main_color }}; }
+  .btn-primary { background-color:{{ main_color }}; border-color: {{ main_color }}; }
+  .btn-primary.active { background-color: {{ main_color }}; border-color: {{ main_color }}; }
+  .btn-primary .badge { color: {{ main_color }}; }
+  .dropdown-menu>li>a:focus { background-color:{{ main_color }}; }
+  .dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus { background-color:{{ main_color }}; }
+  .input-group-addon { color: {{ main_color }}; }
+  .nav-tabs>li.active>a,.nav-tabs>li.active>a:hover,.nav-tabs>li.active>a:focus{ color: {{ main_color }}; }
+  .nav-pills>li.active>a,.nav-pills>li.active>a:hover,.nav-pills>li.active>a:focus { background-color:{{ main_color }}; }
+  .navbar-default { background-color:{{ main_color }}; }
+  .navbar-inverse .navbar-brand:hover,.navbar-inverse .navbar-brand:focus { color: {{ main_color }}; }
+  .navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>li>a:focus{ color: {{ main_color }}; }
+
+  hr.star-primary { border-color: {{ main_color }}; }
+  hr.star-primary:after { color: {{ main_color }}; }
+
+  footer { background-color: {{ main_color }}; }
+
+  .portfolio-modal .close-modal .lr { background-color: {{ main_color }}; }
+  .portfolio-modal .close-modal .lr .rl { background-color: {{ main_color }}; }
+  {% endif %}
+
+  {% if alt_color %}
+
+  a, a:hover, a:focus, a:active, a.active { color: {{ alt_color }}; }
+  hr.star-light:after { background-color: {{ alt_color }}; }
+  header { background: {{ alt_color }}; }
+  section.success { background: {{ alt_color }}; }
+  .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active { color: {{ alt_color }}; }
+  .floating-label-form-group-with-focus label { color: {{ alt_color }}; }
+  .bg-success { background-color: {{ alt_color }}; }
+  .table>thead>tr>td.success,.table>tbody>tr>td.success,.table>tfoot>tr>td.success,.table>thead>tr>th.success,.table>tbody>tr>th.success,.table>tfoot>tr>th.success,.table>thead>tr.success>td,.table>tbody>tr.success>td,.table>tfoot>tr.success>td,.table>thead>tr.success>th,.table>tbody>tr.success>th,.table>tfoot>tr.success>th { background-color: {{ alt_color }} }
+  .has-success .input-group-addon { background-color: {{ alt_color }}; }
+  .btn-success { background-color: {{ alt_color }}; border-color: {{ alt_color }}; }
+  .btn-success.disabled,.btn-success[disabled],fieldset[disabled] .btn-success,.btn-success.disabled:hover,.btn-success[disabled]:hover,fieldset[disabled] .btn-success:hover,.btn-success.disabled:focus,.btn-success[disabled]:focus,fieldset[disabled] .btn-success:focus,.btn-success.disabled:active,.btn-success[disabled]:active,fieldset[disabled] .btn-success:active,.btn-success.disabled.active,.btn-success[disabled].active,fieldset[disabled] .btn-success.active { background-color: {{ alt_color }}; border-color: {{ alt_color }}; }
+  .btn-success .badge { color: {{ alt_color }}; }
+  .btn-link {color: {{ alt_color }}; }
+  .btn-link:hover,.btn-link:focus { color: {{ alt_color }}; }
+  .nav .open>a,.nav .open>a:hover,.nav .open>a:focus { border-color: {{ alt_color }}; }
+  .navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus { color: {{ alt_color }}; }
+  .navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus{ color: {{ alt_color }}; }
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {color: {{ alt_color }}; }
+  .navbar-default .navbar-link:hover { color:{{ alt_color }}; }
+  .navbar-default .btn-link:hover,.navbar-default .btn-link:focus { color: {{ alt_color }}; }
+  .navbar-inverse{ background-color: {{ alt_color }}; }
+  .pagination>li>a,.pagination>li>span { background-color: {{ alt_color }}; }
+  .pager li>a,.pager li>span { background-color: {{ alt_color }}; }
+  .label-success { background-color: {{ alt_color }}; }
+  a.thumbnail:hover,a.thumbnail:focus,a.thumbnail.active { border-color: {{ alt_color }}; }
+  .alert-success { background-color: {{ alt_color }}; border-color: {{ alt_color }}; }
+  .progress-bar-success { background-color: {{ alt_color }}; }
+  .list-group-item-success { background-color: {{ alt_color }}; }
+  .panel-success { border-color: {{ alt_color }}; }
+  .panel-success>.panel-heading{ background-color: {{ alt_color }}; border-color: {{ alt_color }}; }
+  .navbar-inverse .badge { color: {{ alt_color }}; }
+  .text-success,.text-success:hover {color:{{ alt_color }}; }
+  .has-success .form-control-feedback {color:{{ alt_color }}; }
+  .has-success .form-control:focus {border-color: {{ alt_color }}; }
+  {% endif %}
+</style>
+{% endif %}

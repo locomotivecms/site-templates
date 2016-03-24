@@ -1,0 +1,35 @@
+---
+title: Shop
+published: true
+listed: true
+position: 1
+---
+{% extends 'layouts/default' %}
+
+{% block content %}
+
+<div class="container main-content">
+
+  <h2 class="page-title">{% editable_text title, inline: true, rows: 1 %}Our catalog of products{% endeditable_text %}</h2>
+
+  {% editable_model 'products', hint: 'all products paginated by 8' %}
+    {% paginate contents.products by 8 %}
+    <div class="row">
+      <div class="col-md-12">
+        {% for product in paginate.collection %}
+          {% include 'product' with product %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="pagination">
+          {{ paginate | default_pagination: "previous_label:<i class='fa fa-chevron-left'></i>", "next_label:<i class='fa fa-chevron-right'></i>" }}
+        </div>
+      </div>
+    </div>
+    {% endpaginate %}
+  {% endeditable_model %}
+</div>
+
+{% endblock %}

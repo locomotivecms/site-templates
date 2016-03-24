@@ -1,0 +1,27 @@
+{% model_form 'messages', id: 'contactForm', json: true %}
+.row.control-group
+  .form-group.col-xs-12.floating-label-form-group.controls
+    %label Name
+    %input#name.form-control{"data-validation-required-message" => "Please enter your name.", placeholder: "Name", required: "", type: "text", name: 'content[name]'}
+    %p.help-block.text-danger
+.row.control-group
+  .form-group.col-xs-12.floating-label-form-group.controls
+    %label Email Address
+    %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", placeholder: "Email Address", required: "", type: "email", name: 'content[email]'}
+    %p.help-block.text-danger
+.row.control-group
+  .form-group.col-xs-12.floating-label-form-group.controls
+    %label Phone Number
+    %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", placeholder: "Phone Number", required: "", type: "tel", name: 'content[phone]'}
+    %p.help-block.text-danger
+.row.control-group
+  .form-group.col-xs-12.floating-label-form-group.controls
+    %label Message
+    %textarea#message.form-control{"data-validation-required-message" => "Please enter a message.", placeholder: "Message", required: "", rows: "5", name: 'content[message]'}
+    %p.help-block.text-danger
+%br
+#success
+.row
+  .form-group.col-xs-12
+    %button.btn.btn-success.btn-lg{type: "submit"} Send
+{% endmodel_form %}

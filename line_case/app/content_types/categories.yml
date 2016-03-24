@@ -25,6 +25,13 @@ order_by: manually # default: manually, also available: created_at or any field 
 # Emails to be notified on new entries using the public API
 # public_submission_accounts: ['john@acme.net']
 
+# Control the display of the content type in the back-office.
+display_settings:
+  # seo: false              # display the SEO tab for the content entries
+  # advanced: false         # display the Advanced tab for the content entries
+  position: 1             # position in the sidebar menu
+  # hidden: false           # hidden for authors?
+
 # Describe each field. The name shoud always be an underscored string
 fields:
 - name: # Name of the field

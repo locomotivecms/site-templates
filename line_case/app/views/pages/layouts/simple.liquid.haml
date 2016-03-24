@@ -1,0 +1,21 @@
+---
+title: Simple layout
+published: true
+is_layout: true
+---
+{% extends "layouts/default" %}
+
+{% block main %}
+.row
+  .small-12.columns
+    {% editable_text content, rows: 20 %}
+    %h2 Lorem ipsum
+
+    %p
+      Sed suscipit risus vel sapien fringilla elementum. Donec vulputate sapien suscipit nulla tincidunt sodales. Ut ut nisi in nisl convallis ultricies. Curabitur tristique faucibus tincidunt. Donec rutrum mi faucibus nisi luctus sodales facilisis neque semper.
+
+    %p
+      Curabitur euismod dignissim orci, at vestibulum ligula convallis non. Etiam sagittis diam quis felis volutpat convallis. In vehicula, est sit amet iaculis venenatis, mauris felis euismod tellus, sed facilisis eros felis in nunc. Nam nec arcu vel magna posuere malesuada. Fusce pretium magna vitae elit imperdiet dignissim. Duis egestas quam sit amet tortor vestibulum ac rhoncus dolor vulputate. Maecenas sit amet neque in est iaculis vestibulum.
+    {% endeditable_text %}
+
+{% endblock %}

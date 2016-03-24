@@ -1,0 +1,40 @@
+- "Bike":
+    picture: /samples/products/bike.jpg # Path to a file in the public/samples folder or to a remote and external file.
+    short_description: "Qui similique velit vero molestiae aut."
+    description: "Quis recusandae perspiciatis quo magnam ipsa est. Libero molestias quia. Asperiores ab in. Ex quis dignissimos quam."
+    featured: true
+    price: 42
+
+- "Glasses #2":
+    picture: /samples/products/glasses.jpg # Path to a file in the public/samples folder or to a remote and external file.
+    short_description: "Sequi illo consequuntur ducimus non voluptatum maxime architecto."
+    description: "Eos quos et non error assumenda deserunt. Facilis nulla commodi velit ut dolorem sunt. Odio ratione quidem a."
+    price: 42
+
+- "Controller":
+    picture: /samples/products/controller.jpg # Path to a file in the public/samples folder or to a remote and external file.
+    short_description: "Recusandae ut praesentium eligendi quis error."
+    description: "Maxime incidunt perspiciatis architecto sunt voluptates iusto autem. At repellat quo perferendis aut et necessitatibus reprehenderit. Sint id fuga incidunt corrupti. Voluptatem expedita dolores vel eos. Et nihil saepe minima facilis nihil quis."
+    featured: true
+    price: 42
+
+- "Glasses":
+    picture: /samples/products/glasses.jpg # Path to a file in the public/samples folder or to a remote and external file.
+    short_description: "Enim perspiciatis et voluptatibus error et voluptatem sit."
+    description: "Dicta deleniti provident velit deserunt facilis. Omnis consequatur quisquam delectus est sint. Optio quia labore eius. Corrupti autem eaque officiis sint consequatur magnam ut."
+    featured: true
+    price: 42
+
+- "Bike #2":
+    picture: /samples/products/bike.jpg # Path to a file in the public/samples folder or to a remote and external file.
+    short_description: "Enim perspiciatis et voluptatibus error et voluptatem sit."
+    description: "Dicta deleniti provident velit deserunt facilis. Omnis consequatur quisquam delectus est sint. Optio quia labore eius. Corrupti autem eaque officiis sint consequatur magnam ut."
+    featured: false
+    price: 42
+
+- "Cup":
+    picture: /samples/products/cup.jpg # Path to a file in the public/samples folder or to a remote and external file.
+    short_description: "Enim perspiciatis et voluptatibus error et voluptatem sit."
+    description: "Dicta deleniti provident velit deserunt facilis. Omnis consequatur quisquam delectus est sint. Optio quia labore eius. Corrupti autem eaque officiis sint consequatur magnam ut."
+    featured: true
+    price: 42

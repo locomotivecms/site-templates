@@ -4,11 +4,16 @@
     .row
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
         %ul.list-inline.text-center
+          {% for metafield in site.metafields.social %}
+          {% if metafield.value %}
           %li
-            %a{ href: '#' }
+            %a{ href: '{{ metafield.value }}' }
               %span.fa-stack.fa-lg
                 %i.fa.fa-circle.fa-stack-2x
-                %i.fa.fa-rss.fa-stack-1x.fa-inverse
+                %i.fa.fa-stack-1x.fa-inverse{ class: "fa-{{ metafield.name }}" }
+          {% endif %}
+          {% endfor %}
+
 
 
         %p.copyright.text-muted

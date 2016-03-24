@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans+Condensed:300,700);
+@import "bootstrap/variables";
+@import "bootstrap/mixins/vendor-prefixes";
+
+$default-main-color: #3b81ae;
+
+@import "components/nav";
+@import "components/jumbotron";
+@import "components/product";
+@import "components/footer";
+
+body {
+  padding-top: 50px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+// TAGS
+
+h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h2.page-title {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+
+  &:after {
+    content: " ";
+    display: block;
+    width: 100px;
+    height: 2px;
+    margin: 20px auto 20px;
+    background: $default-main-color;
+  }
+}
+
+a {
+  color: $default-main-color;
+  &:hover {
+    color: $default-main-color;
+  }
+}
+
+// MAIN CONTENT
+
+.main-content {
+  margin-top: 30px;
+  min-height: 400px;
+}
+
+
+

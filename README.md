@@ -1,7 +1,17 @@
 Site templates
 ==============
 
-A collection of sites built by Wagon.
+A collection of sites built by Wagon. They require at least Locomotive Engine 3.1.0.rc2 and Wagon 2.1.0.rc4.
+
+## Shop
+
+### Description
+
+Shop is a simple e-commerce Locomotive site powered by [Snipcart](http://snipcart.com) and Bootstrap. Fully responsive.
+
+### License & Author Details
+
+Copyright (c) 2016 NoCoffee, released under the MIT license
 
 ## Freelancer
 
@@ -32,7 +42,7 @@ Clean blog is a carefully styled Bootstrap blog theme that is perfect for person
 
 [Apache 2.0](https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE) by [Start Bootstrap](http://startbootstrap.com)
 
-## LineCase (in progress)
+## LineCase
 
 - Designer: [Blaz Robar](http://www.blazrobar.com), a graphic designer from Melbourne, Australia
 - PSD file [here](http://www.blazrobar.com/2013/free-psd-website-templates/linecase-fresh-bright-website-psd)

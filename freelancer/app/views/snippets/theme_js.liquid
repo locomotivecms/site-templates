@@ -1,0 +1,19 @@
+{% assign main_color = site.metafields.theme.main_color %}
+{% assign alt_color = site.metafields.theme.alt_color %}
+
+{% if main_color or alt_color %}
+
+  {% if alt_color %}
+  <script type="text/javascript">
+    var alt_color = window.hexToRgb('{{ alt_color }}');
+
+    document.write("<style>\
+      #portfolio .portfolio-item .portfolio-link .caption { background-color: " + rgbaToString(alt_color, 0.9) + "; } \
+      \
+      .btn-success:hover,.btn-success:focus,.btn-success:active,.btn-success.active,.open>.dropdown-toggle.btn-success { background-color: " + rgbaToString(alt_color, 0.7) + "; border-color: " + rgbaToString(alt_color, 0.6) + "; } \
+    </style>");
+
+  </script>
+  {% endif %}
+
+{% endif %}

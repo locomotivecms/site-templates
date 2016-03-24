@@ -26,3 +26,38 @@ locales: [en]
 seo_title: Freelancer
 meta_keywords: "some meta keywords"
 meta_description: "some meta description"
+
+# You can control the display of the "Properties" section in the back-office
+metafields_ui:
+  label: Site properties # use a hash for localized versions
+  # icon: shopping-cart # FontAwesome icons without the leading "fa-" string.
+  # hint: "Lorem ipsum..."
+
+# Each site can have its own set of custom properties organized in namespaces.
+# First, define namespaces and their fields in the config/metafields_schema.yml file.
+# Finally, set default values below as described in the example.
+# You can access them in your liquid templates and snippets:
+#   {{ site.metafields.<namespace>.<field> }}
+#
+# Example:
+#
+# metafields:
+#   shop:
+#     address: 700 South Laflin Street
+#   theme:
+#     background_image: "/samples/background.png"
+
+metafields:
+  address:
+    street: 700 South Laflin Street
+    city: "Chicago, IL 60607"
+  social:
+    facebook: "http://locomotive.works"
+    google: "http://locomotive.works"
+    twitter: "http://locomotive.works"
+    linkedin: "http://locomotive.works"
+    dribbble: "http://locomotive.works"
+  theme:
+    main_color: "#533872" # default: #2c3e50
+    alt_color: "#5f82de" # default: #18bc9c
+

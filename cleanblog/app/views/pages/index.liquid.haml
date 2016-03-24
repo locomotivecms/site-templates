@@ -9,8 +9,10 @@ handle: home
 
 {% editable_model "posts", hint: "Display the two most recent posts" %}
 
+{% assign per_page = site.metafields.blog.number_of_posts_per_page | default: 2 %}
+
 {% with_scope date.lte: today %}
-{% paginate contents.posts by 2 %}
+{% paginate contents.posts by per_page %}
 {% for post in paginate.collection %}
 .post-preview
   %a{ href: '{% path_to post %}' }

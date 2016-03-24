@@ -1,0 +1,24 @@
+// JUMBOTRON / BANNER
+
+.banner {
+  margin: 0px 0px 0px 0px;
+  background-position: center;
+}
+
+.jumbotron {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  color: #fff;
+  a {
+    color: #fff;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+}
