@@ -42,4 +42,26 @@ content_type: products
     </div>
   </div>
 
+  {% if product.related_products.size > 0 %}
+    <div class="related-products">
+      <h4>Related Products</h4>
+      {% paginate product.related_products by 4 %}
+      <div class="row">
+        <div class="col-md-12">
+          {% for related_product in paginate.collection %}
+            {% include 'product' with related_product %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="pagination">
+            {{ paginate | default_pagination: "previous_label:<i class='fa fa-chevron-left'></i>", "next_label:<i class='fa fa-chevron-right'></i>" }}
+          </div>
+        </div>
+      </div>
+      {% endpaginate %}
+    </div>
+  {% endif %}
+
 {% endblock %}
