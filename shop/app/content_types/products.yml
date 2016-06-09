@@ -84,3 +84,10 @@ fields:
     hint: "Full description of the product"
     localized: false
     text_formatting: html # html (uses rich text editor), markdown or text (uses plain text editor)
+
+- related_products:
+    label: Related Products
+    type: many_to_many
+    class_name: products
+    inverse_of: related_products
+    ui_enabled: true
