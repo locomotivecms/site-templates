@@ -1,0 +1,81 @@
+// FOOTER
+
+footer {
+  background: $default-main-color;
+  color: #fff;
+  // margin-top: 70px;
+
+  .footer-col {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #fff;
+    &:hover {
+      color: rgba(0, 0, 0, 0.6);
+      text-decoration: none;
+    }
+  }
+
+  .social-links {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    li {
+      display: inline;
+      margin-right: 10px;
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .form-inline {
+    input[type=email] {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      border-radius: 0px;
+      padding-left: 0px;
+      // width: 230px;
+      @include box-shadow(none);
+      @include placeholder(rgba(255, 255, 255, 0.6));
+    }
+
+    button[type=submit] {
+      margin-left: 25px;
+      background: transparent;
+      border-color: #fff;
+      color: #fff;
+
+      &:hover, &:active {
+        background: rgba(0, 0, 0, 0.3);
+        border-color: rgba(0, 0, 0, 0.3);
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+
+  .copyright {
+    background: #000;
+    padding: 20px 0px;
+
+    p {
+      margin: 0px;
+      padding: 0px;
+      font-size: 10px;
+      text-transform: uppercase;
+
+      a:hover {
+        color: #fff;
+      }
+    }
+  }
+}

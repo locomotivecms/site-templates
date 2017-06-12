@@ -1,0 +1,70 @@
+---
+title: Default layout
+is_layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ site.name }}</title>
+
+    {% if site.metafields.theme.favicon %}
+      <link rel="shortcut icon" href="{{ site.metafields.theme.favicon }}">
+    {% else %}
+      <link rel="shortcut icon" href="{{ 'favicon.png' | theme_image_url }}">
+    {% endif %}
+
+    {{ 'bootstrap.css' | stylesheet_tag }}
+    {{ 'application.css' | stylesheet_tag }}
+
+    {% include 'theme_css' %}
+
+    {% seo %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    {% include 'nav' %}
+
+    {% block content, short_name: true %}
+    {% endblock %}
+
+    <footer>
+      <div class="container">
+        {% block footer %}
+        <div class="row">
+          <div class="col-md-4 footer-col">
+            <h3>{% editable_text store_title, fixed: true, inline: true, rows: 1 %}Our site{% endeditable_text %}</h3>
+          </div>
+
+          <div class="col-md-3 footer-col">
+            <h3>{% editable_text social_title, fixed: true, inline: true, rows: 1 %}Social{% endeditable_text %}</h3>
+            {% include social_links %}
+          </div>
+
+          <div class="col-md-5 footer-col">
+            {% editable_text news_and_updates, fixed: true, rows: 5 %}
+              <h3>News and updates</h3>
+              <p>Sign up to get the latest on sales, new releases and more...</p>
+            {% endeditable_text %}
+          </div>
+        </div>
+        {% endblock %}
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <div class="row">
+            <p class="text-center">Powered by &copy; <a href="http://locomotive.works">Locomotive</a> {{ now | localized_date: '%Y' }}</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    {{ 'jquery.min.js' | javascript_tag }}
+    {{ 'bootstrap.min.js' | javascript_tag }}
+    {{ 'application.js' | javascript_tag }}
+  </body>
+</html>

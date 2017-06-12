@@ -1,0 +1,45 @@
+---
+title: My account
+published: true
+handle: me
+listed: false
+---
+{% extends 'layouts/default' %}
+
+{% block content %}
+
+{% authorize "accounts", "sign_in" %}
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="page-title">My account</h2>
+    </div>
+
+    {% if current_account %}
+
+      <div class="col-md-4 col-md-offset-4">
+        <ul class="list-group">
+          <li class="list-group-item">{{ current_account.name }}</li>
+          <li class="list-group-item">{{ current_account.email }}</li>
+          <li class="list-group-item">
+            <form action="{% path_to 'sign_in' %}" method="POST">
+              <input type="hidden" name="auth_action" value="sign_out" />
+              <input type="hidden" name="auth_content_type" value="accounts" />
+              <input type="submit" value="Sign out" class="btn btn-default btn-xs"/>
+            </form>
+          </li>
+        </ul>
+      </div>
+
+    {% else %}
+      <div class="col-md-12">
+        <div class="alert alert-warning">
+          You need to <a href="{% path_to 'sign_in' %}">sign in</a>.
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

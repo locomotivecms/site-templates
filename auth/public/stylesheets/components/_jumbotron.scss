@@ -1,0 +1,42 @@
+// JUMBOTRON / BANNER
+
+.banner {
+  margin: 0px 0px 0px 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100% - 192px);
+
+  > .overlay {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+
+    > .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.jumbotron {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+
+  a {
+    color: #fff;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+}

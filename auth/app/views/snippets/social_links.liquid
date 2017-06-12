@@ -1,0 +1,11 @@
+<ul class="social-links">
+  {% for metafield in site.metafields.social %}
+    {% if metafield.value %}
+    <li>
+      <a href="{{ metafield.value }}">
+        <i class="fa fa-{{ metafield.name }}"></i>
+      </a>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>

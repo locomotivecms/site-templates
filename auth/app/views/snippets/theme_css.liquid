@@ -1,0 +1,10 @@
+{% if site.metafields.theme.main_color %}
+{% assign color = site.metafields.theme.main_color %}
+<style>
+  h2.page-title:after { background-color: {{ color }}; }
+  a { color: {{ color }}; }
+  a:hover { color: {{ color }}; }
+
+  footer { background: {{ color }}; }
+</style>
+{% endif %}

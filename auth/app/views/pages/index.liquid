@@ -1,0 +1,26 @@
+---
+title: Home page
+published: true
+handle: home
+---
+{% extends 'layouts/default' %}
+
+{% block content %}
+
+  {% block jumbotron %}
+  <div class="banner" style="background-image: url({% editable_file banner %}/samples/pages/background.jpg{% endeditable_file %})">
+    <div class="overlay">
+      <div class="container">
+        <div class="jumbotron" >
+          {% editable_text jumbotron, rows: 5, priority: 1 %}
+            <h2>A site with authentication</h2>
+            <p>This is using the last authentication LocomotiveCMS feature</p>
+          {% endeditable_text %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+
+{% endblock %}

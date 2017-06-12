@@ -10,7 +10,18 @@ Shop is a simple e-commerce Locomotive site powered by [Snipcart](http://snipcar
 
 ### License & Author Details
 
-Copyright (c) 2016 NoCoffee, released under the MIT license
+Copyright (c) 2017 NoCoffee, released under the MIT license
+
+## Auth
+
+### Description
+
+Auth is an example about how to use the new authentication system as described here: [https://locomotive-v3.readme.io/v3.3/docs/introduction-1](https://locomotive-v3.readme.io/v3.3/docs/introduction-1).
+It requires at least Engine 3.3.0.rc1 and Wagon 2.3.0.rc1.
+
+### License & Author Details
+
+Copyright (c) 2017 NoCoffee, released under the MIT license
 
 ## Freelancer
 

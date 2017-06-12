@@ -1,7 +1,7 @@
 # The name of this site
 # This text displays in the back-office and
 # can be used in templates through the site.name global variable
-name: "My shop"
+name: "My site"
 
 # An array of domain aliases for the site
 # This option is for sites on multi-site engines
@@ -23,16 +23,9 @@ locales: [en]
 # And include <meta type="keywords"> and <meta type="description">
 # For this purpose you can set values for these variables here
 # They can be accessed in templates through the site.seo_title, site.meta_keywords, and site.meta_description variables
-seo_title: shop
+seo_title: site with restricted section
 meta_keywords: "some meta keywords"
 meta_description: "some meta description"
-
-# You can control the display of the "Properties" section in the back-office
-metafields_ui:
-  label:
-    en: Store settings # use a hash for localized versions
-  icon: shopping-cart # FontAwesome icons without the leading "fa-" string.
-  hint: "If you don't have a Snipcart account, please sign up <a href='https://app.snipcart.com/account/register'>here</a> and then click on the Snipcart Integration tag below."
 
 # Each site can have its own set of custom properties organized in namespaces.
 # First, define namespaces and their fields in the config/metafields_schema.yml file.
@@ -49,17 +42,16 @@ metafields_ui:
 #     background_image: "/samples/background.png"
 
 metafields:
-  my_store:
-    phone_number: "+1 800 123 1234"
-    address: "700 South Laflin Street, Chicago, IL 60607"
-    email: "support@mystore.com"
   social:
     facebook: "http://locomotive.works"
     twitter: "http://locomotive.works"
     pinterest: "http://locomotive.works"
     google: "http://locomotive.works"
-  snipcart:
-    api_key: "ZGRhMmU5NjItZDUzZS00ZjkwLTgxYWQtNzE5YmFhMGI0NzQwNjM1OTM1NjI2MTQ3MzgwMDAw"
   theme:
-    main_color: "#3b81ae"
+    main_color: "#46B981"
+  smtp:
+    address: localhost
+    port: 25
+    user_name: me
+    password: none
 
