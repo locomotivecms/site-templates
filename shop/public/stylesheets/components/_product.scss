@@ -39,6 +39,21 @@
   }
 }
 
+.related-products {
+  margin-top: 35px;
+  .product-vignette{
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .pagination{margin-top: 5px;}
+  h4{margin-bottom: 18px;}
+  .price{margin-bottom: 10px;}
+  a {
+    font-size: 0.8em;
+    white-space: nowrap;
+  }
+}
+
 .product-vignette {
   margin-bottom: 40px;
 
