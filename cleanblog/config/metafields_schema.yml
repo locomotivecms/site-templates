@@ -13,6 +13,15 @@ social:
     - linkedin
     - dribbble
     - github
+google:
+  label: Google
+  fields:
+    analytics_code:
+      hint: Your Google Analytics ID (ex. UA-9999999)
+      type: string
+    site_verification_code:
+      hint: Your Google Search Console site verification code ("google-site-verification")
+      type: string
 
 # Site metafield schema
 #
