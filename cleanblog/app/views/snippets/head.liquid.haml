@@ -8,6 +8,8 @@
 
   %link{ rel: 'canonical', href: '{{ host }}{% path_to page %}' }
 
+  {% include google %}
+
   - # Bootstrap Core CSS
   {{ 'bootstrap.min.css' | stylesheet_tag }}
 
