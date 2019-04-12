@@ -136,19 +136,21 @@
           {% endif %}
         {% endfor %}
       </div>
+             
+      {% if section.blocks %}
+        {% for block in section.blocks %}
+          {% if block.settings.content %}
+            <div class="col-md-2 my-auto menu-header">
+                <li>
+                  <a class="link-menu-header" href="{{ block.settings.url }}" ><p>{{ block.settings.content }}</p></a>
+                </li>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+          
 
-
-            {% for block in section.blocks %}
-              {% if block.settings.content %}
-                <div class="col-md-2 my-auto menu-header">
-                  <li>
-                    <a class="link-menu-header" href="{{ block.settings.url }}" >{{ block.settings.content }}</a>
-                  </li>
-                </div>
-              {% endif %}
-            {% endfor %}
-
-
+          
     <!--  Liste des éléments dans le menu déroulant -->
     <div id="navbar" class="navbar-collapse collapse" data-scroll onclick="closeNav()">
       <ul class="nav navbar-nav">

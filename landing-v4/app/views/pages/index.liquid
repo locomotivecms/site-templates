@@ -44,41 +44,31 @@ sections_dropzone_content: >
     {
     	"type": "informations",
     	"settings": {
-          	"section_name": "Informations de l'entreprise",
-            "identifier": "informations",
-            "display_control": "true",
-            "full_width": false,
-            "display_sm": true,
-            "page_border": true
+          	"section_name": "Informations de l'entreprise"
     	},
     	"blocks": [
     		{
-    			"type": "list_item",
+    			"type": "titre",
     			"settings": {
-                    "id": "nom-societe",
-    				"title": "Titre",
-                    "caption": "Les fous du bocal",
-    				"align_caption": "center"
+                    "class": "nom-societe",
+                    "title": "Les fous du bocal"
     			}
     		},
-    		{
-    			"type": "list_item",
-    			"settings": {
-                    "id": "devise-societe",
-    				"title": "Sous Titre",
-            		"caption": "Une conserverie pas comme les autres",
-                    "align_caption": "center"
-    				}
-    		},
-    		{
-    			"type": "list_item",
-    			"settings": {
-                    "id": "description-societe",
-    				"title": "Description",
-            		"caption": "è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più",
-                    "align_caption": "center"
-    			}
-    		}
+            {
+                "type": "sous-titre",
+                "settings": {
+                    "class": "devise-societe",
+                    "under-title": "Une conserverie pas comme les autres"
+                }
+            },
+            {
+                "type": "description",
+                "settings": {
+                    "class": "description-societe",
+                    "description": "è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più"
+                }
+            }
+
     	]
     },
 
@@ -88,12 +78,7 @@ sections_dropzone_content: >
     {
     	"type": "activites",
     	"settings": {
-            "section_name": "Activités de l'entreprise",
-            "identifier": "activites",
-            "display_control": "true",
-            "full_width": false,
-            "display_sm": true,
-            "page_border": true
+            "section_name": "Activités de l'entreprise"
     	},
     	"blocks": [
     		{

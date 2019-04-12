@@ -12,49 +12,40 @@
   ],
 
   "blocks": [
-          {
-      "name": "Bloc Texte",
-      "type": "list_item",
+    {
+      "name": "Bloc Titre",
+      "type": "titre",
       "settings": [
         {
           "section_name": "Informations",
           "label": "Informations title",
           "id": "title",
           "type": "text"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Bloc Sous Titre",
+      "type": "sous-titre",
+      "settings": [
         {
-          "label": "Transparent background",
-          "id": "bg_transparent",
-          "type": "checkbox"
-        },
-        {
-          "label": "Content",
-          "id": "caption",
+          "label": "Informations under title",
+          "id": "under-title",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "Bloc Description",
+      "type": "description",
+      "settings": [
+                {
+          "label": "Description",
+          "id": "description",
           "type": "text",
           "html": true,
           "nb_rows": 10
-        },
-        {
-          "label": "Caption Alignment",
-          "id": "align_caption",
-          "type": "select",
-          "options": [
-            {"label": "Left","value": "start"},
-            {"label": "Center","value": "center"},
-            {"label": "Right", "value": "end"}
-          ]
-        },
-        {
-          "label": "Caption Size",
-          "id": "caption_size",
-          "type": "select",
-          "options": [
-            {"label": "Left","value": "start"},
-            {"label": "Medium","value": "col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 "},
-            {"label": "Large", "value": "col-12 col-sm-11 col-md-9 col-lg-8 col-xl-7 "}
-          ]
         }
-
       ]
     }
   ],
@@ -65,35 +56,28 @@
       "name": "Informations",
       "category": "Texte",
           "settings": {
-            "section_name": "Main carousel",
-            "identifier": "informations",
-            "display_control": "true",
-            "full_width": "true",
-            "display_sm": "true"
+            "section_name": "Main Informations"
         },
       "blocks": [
         {
-          "type": "text",
+          "type": "titre",
           "settings": {
-            "id": "",
-            "title": "Titre",
-            "align_caption": "center"
+            "class": "nom-societe",
+            "title": "Contenu du titre"
+            }
+        },
+        {
+          "type": "sous-titre",
+          "settings": {
+            "class": "devise-societe",
+            "under-title": "Contenu du sous titre"
           }
         },
         {
-          "type": "text",
+          "type": "description",
           "settings": {
-            "id": "",
-            "title": "Sous Titre",
-            "align_caption": "center"
-          }
-        },
-        {
-          "type": "text",
-          "settings": {
-            "id": "",
-            "title": "Informations",
-            "align_caption": "center"
+            "class": "description-societe",
+            "description": "è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più"
           }
         }
       ]
@@ -103,12 +87,28 @@
 ---
 <div class="container-fluid container-informations">
   <div class="container">
-      {% for slide in section.blocks %}
-      <div class="row justify-content-center">
-        <div class="caption" id="{{slide.settings.id}}">
-          {{ slide.settings.caption }}
-        </div>
-      </div>
+      {% for block in section.blocks %}
+          {% if block.settings.title %}
+            <div class="row justify-content-center">
+                <div class="{{block.settings.class}}">
+                    {{ block.settings.title }}
+                </div>
+            </div>
+          {% endif %}
+          {% if block.settings.under-title %}
+            <div class="row justify-content-center">
+                <div class="{{block.settings.class}}">
+                    {{ block.settings.under-title }}
+                </div>
+            </div>
+          {% endif %}
+          {% if block.settings.description %}
+            <div class="row justify-content-center">
+                <div class="{{block.settings.class}}">
+                    {{ block.settings.description }}
+                </div>
+            </div>
+          {% endif %}
       {% endfor %}
   </div>
 </div>

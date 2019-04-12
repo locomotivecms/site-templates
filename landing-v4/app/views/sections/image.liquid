@@ -56,9 +56,9 @@
 <div class="container-fluid container-image">
       {% for picture in section.blocks %}
         {% if picture.settings.picture %}
-        <div class="row justify-content-center">
-           <img src="{{ picture.settings.picture }}" style="height: 500px;"> 
-        </div>
+            <div class="row justify-content-center">
+               <img src="{{ picture.settings.picture }}" style="height: 500px;"> 
+            </div>
         {%endif%}
       {% endfor %}
 </div>

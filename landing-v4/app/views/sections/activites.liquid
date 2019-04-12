@@ -6,8 +6,8 @@
   "keep_icon": true,
 	"settings": [
     {
-      "id": "section_name",
       "label": "Section Name",
+      "id": "section_name",
       "type": "text"
     }  
   ],
@@ -42,38 +42,12 @@
           "type": "url"
         },
         {
-          "label": "Transparent background",
-          "id": "bg_transparent",
-          "type": "checkbox"
-        },
-        {
           "label": "Content",
           "id": "caption",
           "type": "text",
           "html": true,
           "nb_rows": 10
-        },
-        {
-          "label": "Caption Alignment",
-          "id": "align_caption",
-          "type": "select",
-          "options": [
-            {"label": "Left","value": "start"},
-            {"label": "Center","value": "center"},
-            {"label": "Right", "value": "end"}
-          ]
-        },
-        {
-          "label": "Caption Size",
-          "id": "caption_size",
-          "type": "select",
-          "options": [
-            {"label": "Left","value": "start"},
-            {"label": "Medium","value": "col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 "},
-            {"label": "Large", "value": "col-12 col-sm-11 col-md-9 col-lg-8 col-xl-7 "}
-          ]
         }
-
       ]
     }
   ],
@@ -84,42 +58,32 @@
       "name": "Activites",
       "category": "Image",
           "settings": {
-            "section_name": "Main activite",
-            "identifier": "main",
-            "display_control": "true",
-            "full_width": "true",
-            "display_sm": "true"
+            "section_name": "Main activite"
         },
       "blocks": [
         {
-          "type": "text",
+          "type": "list_item",
           "settings": {
-            "id": "",
             "title": "Titre",
             "picture": "/samples/img-placeholder.jpg",
-            "align_caption": "center",
             "caption": "Activites #1",
             "link": "Je découvre !"
           }
         },
         {
-          "type": "text",
+          "type": "list_item",
           "settings": {
-            "id": "",
             "title": "Sous Titre",
             "picture": "/samples/img-placeholder.jpg",
-            "align_caption": "center",
             "caption": "Activites #2",
             "link": "Je découvre !"
           }
         },
         {
-          "type": "text",
+          "type": "list_item",
           "settings": {
-            "id": "",
             "title": "Informations",
             "picture": "/samples/img-placeholder.jpg",
-            "align_caption": "center",
             "caption": "Activites #3",
             "link": "Je découvre !"
           }
@@ -133,7 +97,7 @@
   <div class="row">
    {% for block in section.blocks %}
 
-        <div class="col-md-4" id="{{block.settings.id}}">
+        <div class="col-md-4 bloc-activite">
           <div class="row justify-content-center">
             {% if block.settings.picture %}
                 <div class="image justify-content-center">
