@@ -1,0 +1,165 @@
+/*------------ VERSION DESKTOP ------------ */
+
+#main-content {
+	margin-top: 120px;
+}
+.navbar {
+	background-color: #fff;
+
+	.main-header {
+	margin: 10px 0 10px 0;
+
+		#row-header {
+		  padding: 0 0 0 25%;
+		}
+
+		#button-menu {
+	      display: none;
+	    }
+
+		.logo-header {
+			height: 80px;
+		}
+
+		.menu-header {
+			text-align: center;
+			padding-top: 7px;
+
+			li {
+				list-style-type: none;
+			}
+
+			.link-menu-header {
+				text-decoration: none;
+				text-transform: uppercase;
+				font-family: Din Pro;
+				font-weight: 700;
+				color: #000;
+			}
+		}
+
+		.basket-header {
+			height: 40px;
+		}
+
+		.navbar-collapse {
+			display: none !important;
+		}
+
+
+  	}
+}
+@media only screen and (max-width: 1366px) {
+	.navbar {
+
+		.main-header {
+
+			#row-header {
+				padding: 0 0 0 15%;
+			}
+		}
+	}
+}
+
+/* ------------- VERSION TABETTE HORIZONTALE --------------- */
+@media only screen and (max-width: 1200px) {
+
+	.navbar {
+
+		.main-header {
+
+			#row-header {
+		  		padding: 0 0 0 11%;
+			}
+		}
+
+		.menu-header {
+
+			a.link-menu-header {
+				font-size: 10px;
+			}
+		}
+
+		.logo-header {
+			padding-right: 130px;
+		}
+	}
+
+}
+
+
+  /* --------------  VERSION MOBILE --------------- */
+  @media only screen and (max-width: 768px) { 
+ 	
+ 	#main-content {
+		margin-top: 90px;	
+	}	
+  	.navbar { 
+
+  		.main-header {
+  			#row-header {
+		  		padding: 0 0 0 0;
+			}
+
+			#button-menu {
+		      border: none;
+		      display: block;
+		      margin: 0 0 0 20px;
+	    	}
+  		}
+
+    	.logo-header {
+			display: none;
+		}
+
+        .menu-header {
+    		display: none;
+    	}
+
+    	.navbar-collapse {
+      		height: 90%;
+      		background-color: #f46b16;
+    	}
+
+    	#navbar {
+    		width: 600px;
+    		height: 600px;
+
+    		.navbar-nav {
+    			padding: 5% 0 0 7%;
+    			
+    			li {
+    			  padding: 0 0 10px 0;
+    			}
+
+				a {
+				  text-transform: uppercase;
+			      color: #fff !important;
+			      letter-spacing: 3px;
+			      font-size: 20px;
+			      font-weight: bold;
+			      margin: 10px 0 0 0;
+			      text-decoration: none;
+				}
+    		}
+    	}
+
+    	.navbar-collapse.collapse.show {
+    		display: block !important;
+    	}
+
+    	.basket-header {
+			display: none;
+		}
+  	 }
+
+ }
+
+
+
+
+
+
+
+
+

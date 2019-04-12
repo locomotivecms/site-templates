@@ -1,0 +1,68 @@
+---
+title: La Conserverie
+published: true
+handle: la-conserverie
+sections_dropzone_content: >
+   [
+       {
+    	"type": "informations",
+    	"settings": {
+          	"section_name": "Informations de l'entreprise",
+            "identifier": "informations",
+            "display_control": "true",
+            "full_width": false,
+            "display_sm": true,
+            "page_border": true
+    	},
+    	"blocks": [
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "nom-societe",
+    				"title": "Titre",
+                    "caption": "La Conserverie",
+    				"align_caption": "center"
+    			}
+    		},
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "devise-societe",
+    				"title": "Sous Titre",
+            		"caption": "des fous du bocal",
+                    "align_caption": "center"
+    				}
+    		},
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "description-societe",
+    				"title": "Description",
+            		"caption": "è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più",
+                    "align_caption": "center"
+    			}
+    		}
+    	]
+    },
+    	{
+    	"type": "image",
+    	"settings": {
+          	"section_name": "Section Image"
+    	},
+    	"blocks": [
+    		{
+    			"type": "list_item",
+    			"settings": {
+    				 "title": "Picture #1",
+    				 "picture": "/samples/man-holds-out-carving-knife.jpg"
+    				}
+    		}
+    	]
+      }
+   ]
+
+
+
+
+---
+{% extends 'layouts/default' %}

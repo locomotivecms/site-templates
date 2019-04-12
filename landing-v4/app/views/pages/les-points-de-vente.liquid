@@ -1,0 +1,100 @@
+---
+title: Les Points de vente
+published: true
+handle: les-points-de-vente
+sections_dropzone_content: >
+   [
+             {
+    	"type": "informations",
+    	"settings": {
+          	"section_name": "Informations produits",
+            "identifier": "informations",
+            "display_control": "true",
+            "full_width": false,
+            "display_sm": true,
+            "page_border": true
+    	},
+    	"blocks": [
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "nom-societe",
+    				"title": "Titre",
+                    "caption": "Nos boutiques",
+    				"align_caption": "center"
+    			}
+    		},
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "devise-societe",
+    				"title": "Sous Titre",
+            		"caption": "Venez nous voir en boutique !",
+                    "align_caption": "center"
+    				}
+    		},
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "description-societe",
+    				"title": "Description",
+            		"caption": "è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più",
+                    "align_caption": "center"
+    			}
+    		}
+    	]
+    },
+   	{
+    	"type": "activites",
+    	"settings": {
+            "section_name": "Liste de produits",
+            "identifier": "productlist",
+            "display_control": "true",
+            "full_width": false,
+            "display_sm": true,
+            "page_border": true
+    	},
+    	"blocks": [
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "bloc-activite-1",
+                    "picture": "/samples/store.png",
+                    "title": "Point de vente #1",
+                    "caption": "103 Avenue des coquelicots, 69002 Lyon",
+                    "link": "<p>Je découvre !</p>",
+                    "url": "index.liquid",
+                    "align_caption": "center"
+    			}
+    		},
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "bloc-activite-2",
+                    "picture": "/samples/store.png",
+    				"title": "Point de vente #2",
+            		"caption": "23 Rue des cactus, 69004 Lyon",
+                    "link": "<p>Je découvre !</p>",
+                    "url": "index.liquid",
+                    "align_caption": "center"
+    			}
+    		},
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "bloc-activite-3",
+                    "picture": "/samples/store.png",
+                    "title": "Point de vente #3",
+                    "caption": "80 Boulevard des tulipes, 69100 Villeurbanne",
+                    "link": "<p>Je découvre !</p>",
+                    "url": "index.liquid",
+                    "align_caption": "center"
+    			}
+    		}
+    	]
+    }
+   ]
+
+
+---
+{% extends 'layouts/default' %}

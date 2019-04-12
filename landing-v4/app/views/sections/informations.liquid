@@ -1,0 +1,116 @@
+---
+{
+  "name": "Informations",
+  "class": "",
+  "icon": "image_text",
+	"settings": [
+    {
+      "id": "section_name",
+      "label": "Section Name",
+      "type": "text"
+    }  
+  ],
+
+  "blocks": [
+          {
+      "name": "Bloc Texte",
+      "type": "list_item",
+      "settings": [
+        {
+          "section_name": "Informations",
+          "label": "Informations title",
+          "id": "title",
+          "type": "text"
+        },
+        {
+          "label": "Transparent background",
+          "id": "bg_transparent",
+          "type": "checkbox"
+        },
+        {
+          "label": "Content",
+          "id": "caption",
+          "type": "text",
+          "html": true,
+          "nb_rows": 10
+        },
+        {
+          "label": "Caption Alignment",
+          "id": "align_caption",
+          "type": "select",
+          "options": [
+            {"label": "Left","value": "start"},
+            {"label": "Center","value": "center"},
+            {"label": "Right", "value": "end"}
+          ]
+        },
+        {
+          "label": "Caption Size",
+          "id": "caption_size",
+          "type": "select",
+          "options": [
+            {"label": "Left","value": "start"},
+            {"label": "Medium","value": "col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 "},
+            {"label": "Large", "value": "col-12 col-sm-11 col-md-9 col-lg-8 col-xl-7 "}
+          ]
+        }
+
+      ]
+    }
+  ],
+
+
+  "presets": [
+    {
+      "name": "Informations",
+      "category": "Texte",
+          "settings": {
+            "section_name": "Main carousel",
+            "identifier": "informations",
+            "display_control": "true",
+            "full_width": "true",
+            "display_sm": "true"
+        },
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "id": "",
+            "title": "Titre",
+            "align_caption": "center"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "id": "",
+            "title": "Sous Titre",
+            "align_caption": "center"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "id": "",
+            "title": "Informations",
+            "align_caption": "center"
+          }
+        }
+      ]
+    }
+  ]
+}
+---
+<div class="container-fluid container-informations">
+  <div class="container">
+      {% for slide in section.blocks %}
+      <div class="row justify-content-center">
+        <div class="caption" id="{{slide.settings.id}}">
+          {{ slide.settings.caption }}
+        </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+  

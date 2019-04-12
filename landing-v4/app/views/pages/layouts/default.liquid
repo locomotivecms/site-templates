@@ -1,0 +1,48 @@
+---
+title: Default layout
+is_layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    {% seo %}
+
+    {{ 'bootstrap/bootstrap.min.css' | stylesheet_tag }}
+    {{ 'bootstrap/bootstrap-grid.min.css' | stylesheet_tag }}
+    {{ 'bootstrap/bootstrap-reboot.min.css' | stylesheet_tag }}
+    {{ 'hamburger/hamburgers.css' | stylesheet_tag }}
+    {{ 'application.css' | stylesheet_tag }}
+
+  </head>
+  <body>
+
+
+    <!-- SECTION HEADER -->
+    {% block header %}
+      {% global_section 'header', id:'page_header', placement: 'top' %}
+    {% endblock %}  
+
+    {% block 'main' %}
+    {% endblock %}
+    <div class="container-fluid" id="main-content">
+       {% sections_dropzone %}
+    </div>
+
+    {% block footer %}
+      {% global_section 'footer', id:'page_footer', placement: 'bottom' %}
+    {% endblock %}
+
+
+
+    {{ 'jquery-3.3.1.slim.min.js' | javascript_tag }}
+    {{ 'bootstrap.min.js' | javascript_tag }}
+    {{ 'carousel.js' | javascript_tag }}
+    {{ 'debug-section.js' | javascript_tag }}
+    {{ 'index.js' | javascript_tag }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </body>
+</html>

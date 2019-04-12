@@ -1,0 +1,161 @@
+---
+{
+  "name": "Activites",
+  "class": "",
+  "icon": "image_text",
+  "keep_icon": true,
+	"settings": [
+    {
+      "id": "section_name",
+      "label": "Section Name",
+      "type": "text"
+    }  
+  ],
+
+  "blocks": [
+          {
+      "name": "Bloc Texte",
+      "type": "list_item",
+      "settings": [
+        {
+          "section_name": "Informations",
+          "label": "Informations title",
+          "id": "title",
+          "type": "text"
+        },
+        {
+          "label": "Slide Image",
+          "id": "picture",
+          "type": "image_picker",
+          "default": "",
+          "height": "300",
+          "width": "300"
+        },
+        {
+          "label": "link",
+          "id": "link",
+          "type": "text"
+        },
+        {
+          "label": "url",
+          "id": "url",
+          "type": "url"
+        },
+        {
+          "label": "Transparent background",
+          "id": "bg_transparent",
+          "type": "checkbox"
+        },
+        {
+          "label": "Content",
+          "id": "caption",
+          "type": "text",
+          "html": true,
+          "nb_rows": 10
+        },
+        {
+          "label": "Caption Alignment",
+          "id": "align_caption",
+          "type": "select",
+          "options": [
+            {"label": "Left","value": "start"},
+            {"label": "Center","value": "center"},
+            {"label": "Right", "value": "end"}
+          ]
+        },
+        {
+          "label": "Caption Size",
+          "id": "caption_size",
+          "type": "select",
+          "options": [
+            {"label": "Left","value": "start"},
+            {"label": "Medium","value": "col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 "},
+            {"label": "Large", "value": "col-12 col-sm-11 col-md-9 col-lg-8 col-xl-7 "}
+          ]
+        }
+
+      ]
+    }
+  ],
+
+
+  "presets": [
+    {
+      "name": "Activites",
+      "category": "Image",
+          "settings": {
+            "section_name": "Main activite",
+            "identifier": "main",
+            "display_control": "true",
+            "full_width": "true",
+            "display_sm": "true"
+        },
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "id": "",
+            "title": "Titre",
+            "picture": "/samples/img-placeholder.jpg",
+            "align_caption": "center",
+            "caption": "Activites #1",
+            "link": "Je découvre !"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "id": "",
+            "title": "Sous Titre",
+            "picture": "/samples/img-placeholder.jpg",
+            "align_caption": "center",
+            "caption": "Activites #2",
+            "link": "Je découvre !"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "id": "",
+            "title": "Informations",
+            "picture": "/samples/img-placeholder.jpg",
+            "align_caption": "center",
+            "caption": "Activites #3",
+            "link": "Je découvre !"
+          }
+        }
+      ]
+    }
+  ]
+}
+---
+<div class="container container-activites">
+  <div class="row">
+   {% for block in section.blocks %}
+
+        <div class="col-md-4" id="{{block.settings.id}}">
+          <div class="row justify-content-center">
+            {% if block.settings.picture %}
+                <div class="image justify-content-center">
+                  <img class="img-activites" src="{{block.settings.picture}}" style="height: 220px;">
+                </div>
+            {% endif %}
+          </div>
+          <div class="row justify-content-center">
+            {% if block.settings.caption %}
+                <div class="nom-activites" id="{{section.settings.identifier}}">
+                  {{ block.settings.caption }}
+                </div>
+            {% endif %}
+          </div>
+          <div class="row justify-content-center">
+            {% if block.settings.link %}
+                <div class="link">
+                  <a class="lien-je-decouvre" href="{{ block.settings.url }}">{{ block.settings.link }}</a>
+                </div>
+            {% endif %}
+          </div>       
+        </div>
+   {% endfor %}
+  </div>
+</div>
