@@ -61,4 +61,22 @@ Clean blog is a carefully styled Bootstrap blog theme that is perfect for person
 - fully responsive
 - build with the [Zurb foundation](http://foundation.zurb.com) framework
 
+## landing page
+
+### Source
+
+[https://github.com/EBII/site-templates/](https://github.com/EBII/site-templates/)
+
+### Description
+
+One page site build with sections has in locomotivecms V4 and bootstrap4 
+all is editable in back office with section add to get more 
+header & footer is global section present in all pages
+tree other sections available with some editable content: slider informations and activities
+one content form for email inscription.
+
+### License & Author Details
+
+- [A-Gplv3] 
+- Designer: Eleonore Ampuy => eleonoreampuy dot com
 
