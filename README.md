@@ -69,11 +69,11 @@ Clean blog is a carefully styled Bootstrap blog theme that is perfect for person
 
 ### Description
 
-One page site build with sections has in locomotivecms V4 and bootstrap4 
-all is editable in back office with section add to get more 
-header & footer is global section present in all pages
-tree other sections available with some editable content: slider informations and activities
-one content form for email inscription.
+ One page site build with sections has in locomotivecms V4 and bootstrap4. 
+ All is editable in back office with section add to get more. 
+ Header & footer is global section present in all pages. 
+ Tree other sections available with some editable content: slider informations and activities. 
+ One content form for newsleter registration.
 
 ### License & Author Details
 
