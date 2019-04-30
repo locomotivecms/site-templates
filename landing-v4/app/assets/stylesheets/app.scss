@@ -1,1 +1,47 @@
-// Wagon main stylesheet file
+/* IMPORT DES FONTS */
+@font-face {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/amatic-sc-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Amatic SC Regular'), local('AmaticSC-Regular'),
+       url('../fonts/amatic-sc-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/amatic-sc-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/amatic-sc-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/amatic-sc-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/amatic-sc-v12-latin-regular.svg#AmaticSC') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'DIN Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('DIN Pro Bold'), local('DINPro-Bold'),
+       url('../fonts/DinProBold.ttf') format('truetype'),
+       url('../fonts/DinProBold.woff') format('woff'),
+       url('../fonts/DINProBold.woff2') format('woff2');
+  src: local('DIN pro Regular'), local('DINPro-Regular'),
+       url('../fonts/DinProRegular.ttf') format('truetype'),
+       url('../fonts/DinProRegular.woff') format('woff'),
+       url('../fonts/din-pro-regular.woff2') format('woff2');
+}
+
+/* IMPORT DES DEPENDANCES */
+@import "~bootstrap/scss/bootstrap";
+@import "~hamburgers/_sass/hamburgers/hamburgers";
+
+/* IMPORT DU CSS */
+@import "components/nav";
+@import "components/footer";
+@import "components/image";
+@import "components/carousel";
+@import "components/informations";
+@import "components/activites";
+
+.container-fluid {
+  padding: 0 0 0 0;
+}
+
+/* Disable horizontal scroll */
+body {
+ overflow-x: hidden;
+}

@@ -1,0 +1,49 @@
+/* --------------- CSS INFORMATIONS ----------- */
+
+/* --------------- VERSION DESKTOP ------------*/
+.container-informations {
+	text-align: center;
+	background-color: #ede2d5;
+
+
+	.nom-societe {
+		padding: 10px 0 10px 0;
+		color: #f46b16;
+		font-family: amatic sc;
+		font-size: 80px;
+	}
+
+	.devise-societe {
+		padding: 10px 0 10px 0;
+		color: #000;
+		font-family: DIN Pro;
+		font-weight: bold;
+		font-size: 25px;
+		}
+
+	.description-societe {
+		padding: 30px 50px 30px 50px;
+		color: #000;
+		font-family: DIN Pro;
+		font-weight: normal;
+		font-size: 20px;
+		}
+}
+
+
+/* ----------------- VERSION MOBILE ---------------- */
+@media only screen and (max-width: 600px ) {
+
+	.nom-societe {
+		font-size: 40px !important;
+	}
+
+	.devise-societe {
+		font-size: 16px !important;
+	}
+
+	.description-societe {
+		font-size: 14px !important;
+	}
+
+}

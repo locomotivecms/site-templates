@@ -1,7 +1,7 @@
 # The name of this site
 # This text displays in the back-office and
 # can be used in templates through the site.name global variable
-name: "template_artisan_section"
+name: "Landig page for locomotivecms v4 "
 
 # An array of domain aliases for the site
 # This option is for sites on multi-site engines
@@ -23,7 +23,7 @@ locales: [en]
 # And include <meta type="keywords"> and <meta type="description">
 # For this purpose you can set values for these variables here
 # They can be accessed in templates through the site.seo_title, site.meta_keywords, and site.meta_description variables
-seo_title: template_artisan_section
+seo_title: landing page for locomotivecms v4
 meta_keywords: "some meta keywords"
 meta_description: "some meta description"
 
@@ -46,3 +46,7 @@ meta_description: "some meta description"
 #     address: 700 South Laflin Street
 #   theme:
 #     background_image: "/samples/background.png"
+
+# Custom routes
+# routes:
+#   - "posts/:year/:month": "blog_posts"

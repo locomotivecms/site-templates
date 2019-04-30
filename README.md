@@ -75,6 +75,11 @@ Clean blog is a carefully styled Bootstrap blog theme that is perfect for person
  Tree other sections available with some editable content: slider informations and activities. 
  One content form for newsleter registration.
 
+ Use WebPack and need Wagon v3 
+        bundle install
+        wagon serve
+        yarn
+        yarn start (for dev) see guide in documentation https://doc.locomotivecms.com/v4.0/docs/manage-js-and-css-with-webpack
 ### License & Author Details
 
 - [A-Gplv3] 
