@@ -1,8 +1,9 @@
 const path = require('path');
+const Webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './javascripts/app.js',
+  entry: './app/assets/javascripts/app.js',
   output: {
     path:     path.resolve(__dirname, '../../public'),
     filename: 'javascripts/bundle.js'
@@ -12,8 +13,12 @@ module.exports = {
       {
         test: /\.(js|jsx|es6)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: { presets: ['env'] }
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       },
       {
         test: /\.scss$/,
@@ -42,6 +47,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new Webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    }),
     new MiniCssExtractPlugin({ filename: 'stylesheets/bundle.css', allChunks: true })
   ]
 };
