@@ -1,0 +1,125 @@
+---
+title: Home page
+published: true
+handle: home
+sections_dropzone_content: >
+  [
+    {
+      "type": "carousel",
+      "settings": {
+        "section_name": "Main carousel",
+        "identifier": "carousel",
+        "display_control": "true",
+        "full_width": false,
+        "display_sm": true,
+        "page_border": true
+      },
+      "blocks": [
+        {
+          "type": "list_item",
+          "settings": {
+            "title": "Slide numero #1",
+            "picture": "/samples/slide1-food.jpg",
+            "link": "",
+            "align_caption": "center"
+          }
+        },
+        {
+          "type": "list_item",
+          "settings": {
+            "title": "Slide numero #2",
+            "picture": "/samples/slide2-food.jpg",
+            "link": "",
+            "caption": "<h5>Slide #2</h5><p>Maecenas varius nibh a maximus vehicula</p>",
+            "align_caption": "end"
+          }
+        }
+      ]
+    },
+
+
+
+
+
+    {
+    	"type": "informations",
+    	"settings": {
+          	"section_name": "Informations de l'entreprise"
+    	},
+    	"blocks": [
+    		{
+    			"type": "titre",
+    			"settings": {
+                    "class": "nom-societe",
+                    "title": "Les fous du bocal"
+    			}
+    		},
+            {
+                "type": "sous-titre",
+                "settings": {
+                    "class": "devise-societe",
+                    "under-title": "Une conserverie pas comme les autres"
+                }
+            },
+            {
+                "type": "description",
+                "settings": {
+                    "class": "description-societe",
+                    "description": "è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più"
+                }
+            }
+
+    	]
+    },
+
+
+
+
+    {
+    	"type": "activites",
+    	"settings": {
+            "section_name": "Activités de l'entreprise"
+    	},
+    	"blocks": [
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "bloc-activite-1",
+                    "picture": "/samples/conserverie-PA.png",
+                    "title": "Activité #1",
+                    "caption": "Découvrez nos produits",
+                    "link": "<p>Je découvre !</p>",
+                    "url": "nos-produits",
+                    "align_caption": "center"
+    			}
+    		},
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "bloc-activite-2",
+                    "picture": "/samples/QM_livre-picto.png",
+    				"title": "Activité #2",
+            		"caption": "Suivre nos actualités",
+                    "link": "<p>Je découvre !</p>",
+                    "url": "actualites",
+                    "align_caption": "center"
+    			}
+    		},
+    		{
+    			"type": "list_item",
+    			"settings": {
+                    "id": "bloc-activite-3",
+                    "picture": "/samples/maisonpartenaire-PA-V2.png",
+                    "title": "Activité #3",
+                    "caption": "Lieux de vente",
+                    "link": "<p>Je découvre !</p>",
+                    "url": "les-points-de-vente",
+                    "align_caption": "center"
+    			}
+    		}
+    	]
+    }
+  ]
+
+---
+{% extends 'layouts/default' %}

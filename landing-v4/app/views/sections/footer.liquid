@@ -1,0 +1,283 @@
+---
+{
+  "name": "Footer",
+  "class": "",
+  "icon": "footer",
+  "keep_icon": true,
+  "id": "footer",
+  "settings": [
+
+    {
+      "label": "Section name",
+      "id": "title",
+      "type": "text"
+    }
+  ],
+
+  "blocks": [
+    {
+      "name": "Bloc Footer Image",
+      "id": "bloc_footer_image",
+      "type": "reinsurance",
+      "settings": [
+        {
+          "label": "Label",
+          "id": "label",
+          "type": "text"
+        },
+        {
+          "label": "Picture",
+          "id": "icon",
+          "type": "image_picker"
+        }
+      ]
+    },
+    {
+      "name": "Bloc Footer Text",
+      "type": "blocfootertext",
+      "settings": [
+        {
+          "label": "Label",
+          "id": "structure",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "Bloc Footer Social",
+      "type": "blocfootersocial",
+      "settings": [
+        {
+          "label": "Picture",
+          "id": "social",
+          "type": "image_picker"
+        },
+        {
+          "label": "Url",
+          "id": "url",
+          "type": "url"
+        }
+      ]
+    },
+    {
+      "name": "Bloc CGU",
+      "type": "blocfootercgu",
+      "settings": [
+        {
+          "label": "Content",
+          "id": "content",
+          "type": "text",
+          "html": true,
+          "nb_rows": 10
+        }
+      ]
+    },
+    {
+      "name": "Bloc Contact",
+      "type": "blocfootercontact",
+      "settings": [
+        {
+          "label": "Content",
+          "id": "contentcontact",
+          "type": "text",
+          "html": true,
+          "nb_rows": 10
+        }
+      ]
+    }
+  ],
+
+
+  "default": {
+    "settings": {
+        "title": "Footer"
+      },
+        "blocks": [
+          {
+            "type": "reinsurance",
+            "settings": {
+              "label": "Inscrivez-vous à notre newsletter",
+              "icon": "/samples/conserverie-white.png"
+            }
+          },
+          {
+            "type": "blocfootertext",
+            "settings": {
+              "structure": "Suivez-nous"
+            }
+          },
+          {
+            "type": "blocfootersocial",
+            "settings": {
+              "social": "/samples/facebook.png",
+              "url": "https://fr-fr.facebook.com/"
+            }
+          },
+          {
+            "type": "blocfootersocial",
+            "settings": {
+              "social": "/samples/instagram.png",
+              "url": "https://www.instagram.com/"
+            }
+          },
+          {
+            "type": "blocfootersocial",
+            "settings": {
+              "social": "/samples/youtube.png",
+              "url": "https://www.youtube.com/"
+            }
+          },
+          {
+            "type": "blocfootercgu",
+            "settings": {
+              "content": "contactez nous"
+            }
+          },
+          {
+            "type": "blocfootercgu",
+            "settings": {
+              "content": "liens"
+            }
+          },
+          {
+            "type": "blocfootercgu",
+            "settings": {
+              "content": "mentions légales"
+            }
+          },
+          {
+            "type": "blocfootercontact",
+            "settings": {
+              "contentcontact": "2019 Les fous du bocal"
+            }
+          }
+        ]
+  }
+}
+---
+
+
+
+<footer>
+  <div class="container">
+        <div class="row" id="bloc-inscrivez-vous-a-notre-newsleter">
+            {% for block in section.blocks %}
+              {% if block.settings.icon %}
+                <div class="col-md-4">
+                          <img src="{{ block.settings.icon}}" id="icon-logo">
+                </div>
+              {% endif %}
+
+              {% if block.settings.label %}
+                <div class="col-md-4" id="title-input-footer">
+
+                    <div class="row">
+                            {{ block.settings.label }}
+                    </div>
+                  
+
+                  {% if block.id == "bloc_footer_image" %}
+                    <div class="row">
+                          <input type="mail" name="mail-newsletter" placeholder="Saisissez votre adresse mail">
+                    </div>
+                  {% endif %}
+              
+                </div>
+              {% endif %}
+          {% endfor %}
+        </div>
+
+          {% model_form 'mails', success: '/index', error: '/index#error', id: 'newsletter-form', method: 'POST' %}
+
+              {% if mail.errors %}
+                <p>The following errors occured:</p>
+                <ul>
+                {% for error in mail.errors %}
+                  <li>{{error[0] | capitalize}} -  {{error[1]}}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+
+
+              <div class="form-group" id="bloc-input-mail">
+                <div class="row">
+                  <div class="col-md-12 col-12">
+                    <input id="mail-newsletter" type="email" name="content[email]"  placeholder="Saisissez votre e-mail">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-12">
+                    <input type="submit" value="M'inscrire" id="submit-button">
+                  </div>
+                </div>
+                <span id="success" class="alert alert-success js-alert" style="display: none;" role="alert">Merci pour votre participation</span>
+                <span id="error" style="display: none;">Erreur</span>
+              </div>
+            
+          {% endmodel_form %}
+        
+
+        <div class="row justify-content-center" id="bloc-suivez-nous">
+
+            {% if block.settings.label %}
+                <div class="col-md-12">
+                  <div class="row">
+                          {{ block.settings.label }}
+                  </div>
+                </div>
+            {% endif %}
+
+            {% for block in section.blocks %}
+                {% if block.settings.structure %}
+                <div class="col-md-12">
+                  <div class="row justify-content-center" id="suivez-nous">
+                      {{ block.settings.structure }}
+                  </div>
+                </div>
+                {% endif %}
+             {% endfor %}
+
+
+                  
+                  {% for block in section.blocks %}
+                    {% if block.settings.social %}
+                      <div class="col-md-2 col-3 col-md-offset-3">
+                        <a href="{{ block.settings.url }}">
+                          <img src="{{ block.settings.social }}" height="60">
+                        </a>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                  
+
+           
+        </div>   
+  </div>
+
+  <div class="container-fluid">
+          <div class="row" id="bloc-cgu">
+
+              <div id="contact" class="col-xl-4 col-md-12 col-12 text-left">
+                {% for block in section.blocks %}
+                      {{ block.settings.contentcontact }}
+                {% endfor %}
+              </div>
+
+
+              <div class="col-xl-8 col-md-12" id="cgu">
+                <div class="row">
+                  {% for block in section.blocks %}
+                  {% if block.settings.content %}
+                
+                    <div class="col-xl-2 col-4">
+                          {{ block.settings.content }}
+                    </div>
+
+                {% endif %}
+              {% endfor %}
+              </div>
+            </div>
+          </div>
+  </div>
+</footer>
+

@@ -1,0 +1,12 @@
+name: Mails
+slug: mails
+description: A description of the content type for the editors
+label_field_name: title
+public_submission_enabled: true
+
+# A list describing each field
+fields:
+- email:
+    label: Email
+    type: string
+    required: true

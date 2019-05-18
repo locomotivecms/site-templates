@@ -1,0 +1,116 @@
+---
+{
+  "name": "Informations",
+  "class": "",
+  "icon": "image_text",
+	"settings": [
+    {
+      "id": "section_name",
+      "label": "Section Name",
+      "type": "text"
+    }  
+  ],
+
+  "blocks": [
+    {
+      "name": "Bloc Titre",
+      "type": "titre",
+      "settings": [
+        {
+          "section_name": "Informations",
+          "label": "Informations title",
+          "id": "title",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "Bloc Sous Titre",
+      "type": "sous-titre",
+      "settings": [
+        {
+          "label": "Informations under title",
+          "id": "under-title",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "Bloc Description",
+      "type": "description",
+      "settings": [
+                {
+          "label": "Description",
+          "id": "description",
+          "type": "text",
+          "html": true,
+          "nb_rows": 10
+        }
+      ]
+    }
+  ],
+
+
+  "presets": [
+    {
+      "name": "Informations",
+      "category": "Texte",
+          "settings": {
+            "section_name": "Main Informations"
+        },
+      "blocks": [
+        {
+          "type": "titre",
+          "settings": {
+            "class": "nom-societe",
+            "title": "Contenu du titre"
+            }
+        },
+        {
+          "type": "sous-titre",
+          "settings": {
+            "class": "devise-societe",
+            "under-title": "Contenu du sous titre"
+          }
+        },
+        {
+          "type": "description",
+          "settings": {
+            "class": "description-societe",
+            "description": "è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più"
+          }
+        }
+      ]
+    }
+  ]
+}
+---
+<div class="container-fluid container-informations">
+  <div class="container">
+      {% for block in section.blocks %}
+          {% if block.settings.title %}
+            <div class="row justify-content-center">
+                <div class="{{block.settings.class}}">
+                    {{ block.settings.title }}
+                </div>
+            </div>
+          {% endif %}
+          {% if block.settings.under-title %}
+            <div class="row justify-content-center">
+                <div class="{{block.settings.class}}">
+                    {{ block.settings.under-title }}
+                </div>
+            </div>
+          {% endif %}
+          {% if block.settings.description %}
+            <div class="row justify-content-center">
+                <div class="{{block.settings.class}}">
+                    {{ block.settings.description }}
+                </div>
+            </div>
+          {% endif %}
+      {% endfor %}
+  </div>
+</div>
+
+  

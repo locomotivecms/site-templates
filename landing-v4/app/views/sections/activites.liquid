@@ -1,0 +1,125 @@
+---
+{
+  "name": "Activites",
+  "class": "",
+  "icon": "image_text",
+  "keep_icon": true,
+	"settings": [
+    {
+      "label": "Section Name",
+      "id": "section_name",
+      "type": "text"
+    }  
+  ],
+
+  "blocks": [
+          {
+      "name": "Bloc Texte",
+      "type": "list_item",
+      "settings": [
+        {
+          "section_name": "Informations",
+          "label": "Informations title",
+          "id": "title",
+          "type": "text"
+        },
+        {
+          "label": "Slide Image",
+          "id": "picture",
+          "type": "image_picker",
+          "default": "",
+          "height": "300",
+          "width": "300"
+        },
+        {
+          "label": "link",
+          "id": "link",
+          "type": "text"
+        },
+        {
+          "label": "url",
+          "id": "url",
+          "type": "url"
+        },
+        {
+          "label": "Content",
+          "id": "caption",
+          "type": "text",
+          "html": true,
+          "nb_rows": 10
+        }
+      ]
+    }
+  ],
+
+
+  "presets": [
+    {
+      "name": "Activites",
+      "category": "Image",
+          "settings": {
+            "section_name": "Main activite"
+        },
+      "blocks": [
+        {
+          "type": "list_item",
+          "settings": {
+            "title": "Titre",
+            "picture": "/samples/img-placeholder.jpg",
+            "caption": "Activites #1",
+            "link": "Je découvre !"
+          }
+        },
+        {
+          "type": "list_item",
+          "settings": {
+            "title": "Sous Titre",
+            "picture": "/samples/img-placeholder.jpg",
+            "caption": "Activites #2",
+            "link": "Je découvre !"
+          }
+        },
+        {
+          "type": "list_item",
+          "settings": {
+            "title": "Informations",
+            "picture": "/samples/img-placeholder.jpg",
+            "caption": "Activites #3",
+            "link": "Je découvre !"
+          }
+        }
+      ]
+    }
+  ]
+}
+---
+<div class="container container-activites">
+  <div class="row">
+   {% for block in section.blocks %}
+
+        <div class="col-md-4 bloc-activite">
+          <div class="row justify-content-center">
+            {% if block.settings.picture %}
+                <div class="image justify-content-center">
+                  <img class="img-activites" src="{{block.settings.picture}}" style="height: 220px;">
+                </div>
+            {% endif %}
+          </div>
+          <div class="row justify-content-center">
+            {% if block.settings.caption %}
+                <div class="nom-activites" id="{{section.settings.identifier}}">
+                  {{ block.settings.caption }}
+                </div>
+            {% endif %}
+          </div>
+          <div class="row justify-content-center">
+            {% if block.settings.link %}
+                <div class="link">
+                  <a class="lien-je-decouvre" href="{{ block.settings.url }}">{{ block.settings.link }}</a>
+                </div>
+            {% endif %}
+          </div>       
+        </div>
+   {% endfor %}
+  </div>
+</div>

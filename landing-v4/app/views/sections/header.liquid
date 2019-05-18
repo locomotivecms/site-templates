@@ -1,0 +1,180 @@
+---
+{
+  "name": "Header",
+  "class": "",
+  "icon": "header",
+  "keep_icon": true,
+  "id": "header",
+  "settings": [
+
+    {
+      "label": "Section Name",
+      "id": "title",
+      "type": "text"
+    }
+  ],
+
+
+  "blocks": [
+    {
+      "name": "Bloc Header Image",
+      "id": "bloc_header_image",
+      "type": "logo",
+      "settings": [
+        {
+          "label": "Picture",
+          "id": "icon",
+          "type": "image_picker"
+        }
+      ]
+    },
+    {
+      "name": "Bloc Menu",
+      "type": "blocmenuheader",
+      "settings": [
+        {
+          "label": "Content",
+          "id": "content",
+          "type": "text",
+          "html": true,
+          "nb_rows": 10
+        },
+        {
+          "label": "url",
+          "id": "url",
+          "type": "url"
+        }
+      ]
+    },
+    {
+      "name": "Bloc Card",
+      "type": "bloccardicon",
+      "settings": [
+        {
+          "label": "Icon Card",
+          "id": "iconcard",
+          "type": "image_picker"
+        }
+      ]
+    }
+  ],
+
+
+  "default": {
+    "settings": {
+      "title": "Header"
+    },
+    "blocks": [
+          {
+            "type": "logo",
+            "settings": {
+              "icon": "/samples/conserverie-PA.png"
+            }
+          },
+          {
+            "type": "blocmenuheader",
+            "settings": {
+              "content": "La Conserverie",
+              "url": "la-conserverie"
+            }
+          },
+          {
+            "type": "blocmenuheader",
+            "settings": {
+              "content": "Nos Produits",
+              "url": "nos-produits"
+            }
+          },
+          {
+            "type": "blocmenuheader",
+            "settings": {
+              "content": "Les points de ventes",
+              "url": "les-points-de-vente"
+            }
+          },
+          {
+            "type": "blocmenuheader",
+            "settings": {
+              "content": "Actualités",
+              "url": "actualites"
+            }
+          },
+          {
+            "type": "blocmenuheader",
+            "settings": {
+              "content": "Contact",
+              "url": "contact"
+            }
+          },
+          {
+            "type": "bloccardicon",
+            "settings": {
+              "iconcard": "/samples/shopping-basket.png"
+            }
+          }
+    ]
+  }
+}
+---
+
+<header>
+  <nav class="navbar fixed-top">
+    <div class="container-fluid main-header">
+    <div class="row" id="row-header">
+        <button type="button" class="hamburger hamburger--spin" id="button-menu" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+      </button>
+
+      <div class="col-md-1 col-6">
+        {% for block in section.blocks %}
+          {% if block.settings.icon %}
+          <a href="{% path_to home %}">
+            <img src="{{ block.settings.icon }}" class="logo-header">
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+             
+      {% if section.blocks %}
+        {% for block in section.blocks %}
+          {% if block.settings.content %}
+            <div class="col-md-2 my-auto menu-header">
+                <li>
+                  <a class="link-menu-header" href="{{ block.settings.url }}" ><p>{{ block.settings.content }}</p></a>
+                </li>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+          
+
+          
+    <!--  Liste des éléments dans le menu déroulant -->
+    <div id="navbar" class="navbar-collapse collapse" data-scroll onclick="closeNav()">
+      <ul class="nav navbar-nav">
+          {% for block in section.blocks %}
+              {% if block.settings.content %}
+                  <li>
+                    <a class="link-menu-header" href="{{ block.settings.url }}" >{{ block.settings.content }}</a>
+                  </li>
+              {% endif %}
+          {% endfor %}
+      </ul>
+    </div>
+
+      <div class="col-md-1 align-self-center">
+        {% for block in section.blocks %}
+          {% if block.settings.iconcard %}
+          <a href="{% path_to les-points-de-vente %}">
+            <img src="{{ block.settings.iconcard }}" class="basket-header">
+          </a> 
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  </nav>
+</header>
+  

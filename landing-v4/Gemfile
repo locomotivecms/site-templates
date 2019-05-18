@@ -1,0 +1,22 @@
+source 'https://rubygems.org'
+
+gem 'locomotivecms_wagon', '~> 3.0.0.rc0'
+
+group :development do
+  # Mac OS X
+  gem 'rb-fsevent', '~> 0.9.1', require: 'rb-fsevent' if RUBY_PLATFORM.include?('darwin')
+
+  # Unix
+  gem 'therubyracer', require: 'v8', platforms: :ruby unless RUBY_PLATFORM.include?('darwin')
+
+  gem 'rb-inotify', '~> 0.9', require: 'rb-inotify' if RUBY_PLATFORM.include?('linux')
+
+  # Windows
+  gem 'wdm', '~> 0.1.1', require: 'wdm' if RUBY_PLATFORM =~ /mswin|mingw/i
+end
+
+group :misc do
+  # Add your extra gems here
+  # gem 'susy', require: 'susy'
+  # gem 'bourbon', require: 'bourbon'
+end

@@ -1,0 +1,44 @@
+---
+title: Default layout
+is_layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% seo %}
+
+    {{ 'bundle.css' | stylesheet_tag }}
+    
+
+    {% if wagon %}
+      <script src="http://localhost:35729/livereload.js"></script>
+    {% endif %}
+  </head>
+  <body>
+
+
+    <!-- SECTION HEADER -->
+    {% block header %}
+      {% global_section 'header', id:'page_header', placement: 'top' %}
+    {% endblock %} 
+
+    {% block 'main' %}
+    {% endblock %}
+
+    <div class="container-fluid" id="main-content">
+       {% sections_dropzone %}
+    </div>
+
+    <!-- SECTION FOOTER -->
+    {% block footer %}
+      {% global_section 'footer', id:'page_footer', placement: 'bottom' %}
+    {% endblock %}
+
+
+
+    {{ 'bundle.js' | javascript_tag }}
+  </body>
+</html>

@@ -1,0 +1,66 @@
+---
+{
+  "name": "Image",
+  "class": "",
+  "icon": "image",
+	"settings": [
+    {
+      "id": "section_name",
+      "label": "Section Name",
+      "type": "text"
+    }  
+  ],
+
+   "blocks": [
+    {
+      "name": "Picture",
+      "type": "list_item",
+      "settings": [
+        {
+          "section_name": "Carousel",
+          "label": "Picture title",
+          "id": "title",
+          "type": "text"
+        },
+        {
+          "label": "Picture",
+          "id": "picture",
+          "type": "image_picker",
+          "default": "",
+          "height": "550"
+        }
+      ]
+    }
+  ],
+
+
+  "presets": [{
+    "name": "Picture",
+    "category": "Picture",
+    "settings": {
+      "section_name": "Picture Section"
+    },
+    "blocks": [
+      {
+        "type": "list_item",
+        "settings": {
+          "title": "Picture #1",
+          "picture": "https://place-hold.it/2200x550/c0e6ec?text=Slide+1&fontsize=25"
+        }
+      }
+    ]
+  }]
+
+}
+---
+<div class="container-fluid container-image">
+      {% for picture in section.blocks %}
+        {% if picture.settings.picture %}
+            <div class="row justify-content-center">
+               <img src="{{ picture.settings.picture }}" style="height: 500px;"> 
+            </div>
+        {%endif%}
+      {% endfor %}
+</div>
+
+  

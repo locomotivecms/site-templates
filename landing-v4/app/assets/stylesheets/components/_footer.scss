@@ -1,0 +1,237 @@
+// FOOTER
+
+footer {
+  background: #f46b16 !important;
+  color: #fff;
+  text-align: center;
+  margin-top: -20px;
+
+  /* CSS SPECIFIQUE */
+  #bloc-inscrivez-vous-a-notre-newsleter {
+    margin: 20px 0 20px 0;
+    padding: 20px 0 0 0;
+    font-size: 40px;
+    font-family: amatic sc;
+    height: 200px;
+
+      #icon-logo {
+        width: 200px;
+      }
+
+      input[type=mail] {
+        width: 250px;
+        height: 30px;
+        border-radius: 0px !important;
+        border-width: 0px !important;
+        color: grey;
+        font-family: DIN Pro;
+        font-size: 15px;
+      }
+
+        #title-input-footer {
+          margin: 20px 0 0 0;
+          font-size: 55px;
+        }
+  }
+
+  #bloc-input-mail {
+
+    .row {
+      margin-bottom: 20px;
+    }
+
+    input[type=email] {
+      background: #fff;
+      border: 0px solid #fff;
+      color: #000;
+      border-radius: 0px;
+      padding-left: 0px;
+      width: 300px;
+      height: 34px;
+      font-size: 15px;
+      box-shadow: none;
+    }
+
+    input[type=submit] {
+      background: #fff;
+      border: 0px solid #fff;
+      color: #f46b16;
+      border-radius: 0px;
+      width: 120px;
+      height: 34px;
+    }
+
+    input[type=submit]:hover {
+      background: #f46b16;
+      color: #fff;
+      transition: 0.5s ease;
+      border: 1px solid #fff;
+    }
+  }
+      
+
+
+  #suivez-nous {
+    margin: 20px 0 20px 0;
+    font-size: 45px;
+    font-family: amatic sc;
+  }
+
+
+
+  #bloc-cgu {
+    padding: 80px 0 80px 0;
+
+    #cgu {
+      text-transform: uppercase;
+    }
+
+    #contact {
+      padding: 0 0 0 100px;
+      line-height: 8px;
+      margin: 20px 0 20px 0;
+    }
+
+  }
+
+/* -------------- VERSION TABLETTE ------------ */
+@media only screen and (max-width: 1200px ) { 
+
+      #bloc-suivez-nous {
+        margin-top: 10px;
+      }
+
+      #bloc-cgu {
+
+        #contact {
+          padding: 0 0 0 140px !important;
+        }
+      } 
+
+      #bloc-input-mail {
+        margin: 90px 0 0 0;
+      }
+
+}
+
+
+
+@media only screen and (max-width: 768px ) {
+      #bloc-suivez-nous {
+        margin-top: 10px;
+      }
+
+      #bloc-cgu {
+
+        #contact {
+          padding: 0 0 0 140px !important;
+        }
+      }
+
+      #bloc-input-mail {
+        margin: 150px 0 0 0;
+      }
+} 
+
+
+
+/* ------------- VERSION MOBILE -------------- */
+
+@media only screen and (max-width: 600px ) { 
+
+      #bloc-suivez-nous {
+        margin-top: 10px;
+      }
+
+      #bloc-cgu {
+
+        #contact {
+          padding: 0 0 0 140px !important;
+        }
+      }
+
+      #bloc-input-mail {
+        margin: 230px 0 0 0;
+      }
+
+}
+
+  
+
+
+
+  /* CSS INITIAL */
+
+/*  .footer-col {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #fff;
+    &:hover {
+      color: rgba(0, 0, 0, 0.6);
+      text-decoration: none;
+    }
+  }
+
+  .social-links {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    li {
+      display: inline;
+      margin-right: 10px;
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .form-inline {
+    input[type=email] {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      border-radius: 0px;
+      padding-left: 0px;
+      // width: 230px;
+      box-shadow: none;
+    }
+
+    button[type=submit] {
+      margin-left: 25px;
+      background: transparent;
+      border-color: #fff;
+      color: #fff;
+
+      &:hover, &:active {
+        background: rgba(0, 0, 0, 0.3);
+        border-color: rgba(0, 0, 0, 0.3);
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+
+  .copyright {
+    background: #000;
+    padding: 20px 0px;
+
+    p {
+      margin: 0px;
+      padding: 0px;
+      font-size: 10px;
+      text-transform: uppercase;
+
+      a:hover {
+        color: #fff;
+      }
+    }
+  }*/
+}

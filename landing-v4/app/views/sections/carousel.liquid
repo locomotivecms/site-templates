@@ -1,0 +1,198 @@
+---
+{
+  "name": "Carousel",
+  "class": "",
+  "icon": "slide",
+  "keep_icon": true,
+  "settings": [
+    {
+      "label": "Section Name",
+      "id": "section_name",
+      "type": "text"
+    },
+    {
+      "label": "Identifier",
+      "id": "identifier",
+      "type": "text"
+    },
+    {
+      "label": "Full width",
+      "id": "full_width",
+      "type": "checkbox"
+    },
+    {
+      "label": "Display on mobile",
+      "id": "display_sm",
+      "type": "checkbox"
+    },
+    {
+      "label": "Display Controls",
+      "id": "display_control",
+      "type": "radio",
+      "options": [
+        {"label": "Display slides controls","value": "true"},
+        {"label": "Hide slides controls", "value": "false"}
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "list_item",
+      "settings": [
+        {
+          "section_name": "Carousel",
+          "label": "Slide title",
+          "id": "title",
+          "type": "text"
+        },
+        {
+          "label": "Slide Image",
+          "id": "picture",
+          "type": "image_picker",
+          "default": "",
+          "height": "550"
+        },
+        {
+          "label": "link",
+          "id": "link",
+          "type": "text"
+        },
+        {
+          "label": "Transparent background",
+          "id": "bg_transparent",
+          "type": "checkbox"
+        },
+        {
+          "label": "Caption",
+          "id": "caption",
+          "type": "text",
+          "html": true,
+          "nb_rows": 10
+        },
+        {
+          "label": "Caption Alignment",
+          "id": "align_caption",
+          "type": "select",
+          "options": [
+            {"label": "Left","value": "start"},
+            {"label": "Center","value": "center"},
+            {"label": "Right", "value": "end"}
+          ]
+        },
+        {
+          "label": "Caption Size",
+          "id": "caption_size",
+          "type": "select",
+          "options": [
+            {"label": "Left","value": "start"},
+            {"label": "Medium","value": "col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 "},
+            {"label": "Large", "value": "col-12 col-sm-11 col-md-9 col-lg-8 col-xl-7 "}
+          ]
+        }
+
+      ]
+    }
+  ],
+  "default": {
+    "settings": {
+      "section_name": "Main carousel",
+      "identifier": "main",
+      "display_control": "true",
+      "full_width": "true",
+      "display_sm": "true"
+    },
+    "blocks": [
+      {
+        "type": "list_item",
+        "settings": {
+          "title": "Slide #1",
+          "picture": "/samples/slide1-food.jpg",
+          "link": "",
+          "align_caption": "center"
+        }
+      },
+      {
+        "type": "list_item",
+        "settings": {
+          "title": "Slide #2",
+          "picture": "/samples/slide2-food.jpg",
+          "link": "",
+          "caption": "<h5>Slide #2</h5><p>Maecenas varius nibh a maximus vehicula</p>",
+          "align_caption": "end"
+        }
+      }
+    ]
+  },
+  "presets": [{
+    "name": "Carousel",
+    "category": "Slider",
+    "settings": {
+      "section_name": "Main carousel",
+      "identifier": "main",
+      "display_control": "true",
+      "full_width": "true",
+      "display_sm": "true"
+    },
+    "blocks": [
+      {
+        "type": "list_item",
+        "settings": {
+          "title": "Slide #1",
+          "picture": "https://place-hold.it/2200x550/c0e6ec?text=Slide+1&fontsize=25",
+          "link": "",
+          "align_caption": "center"
+        }
+      },
+      {
+        "type": "list_item",
+        "settings": {
+          "title": "Slide #2",
+          "picture": "https://place-hold.it/2200x550/ebeeee?text=Slide+2&fontsize=25",
+          "link": "",
+          "caption": "<h5>Slide #2</h5><p>Maecenas varius nibh a maximus vehicula</p>",
+          "align_caption": "end"
+        }
+      }
+    ]
+  }]
+}
+---
+
+<div class="container-fluid">
+  <div class="row text-center {% if section.settings.display_sm != true %}d-none d-sm-block{% endif %}" id="slider">
+    <div class="carousel slide" id="carousel-{{section.settings.identifier}}" data-ride="carousel">
+      <div class="carousel-inner">
+        {% for slide in section.blocks %}
+          <div class="{%if forloop.index0 == 0%}active{%endif%} carousel-item">
+            <a href="{{slide.link}}">
+              <img src="{{ slide.settings.picture }}" alt="{{slide.settings.title}}" class="w-100">
+            </a>
+            {% if slide.settings.caption %}
+              <div class="carousel-caption d-none d-md-flex">
+                <div class="row align-self-center justify-content-center justify-content-md-{{slide.settings.align_caption}}">
+                  <div class="{{caption_size}} carousel-caption-content mt-2 mb-2 {% if !block.settings.bg_transparent %}bg-dark{% endif %}">
+                    <div class="p-3 p-lg-4">
+                      {{ slide.settings.caption }}
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      {% if section.settings.display_control == "true"%}
+      <a class="carousel-control-prev" href="#carousel-{{section.settings.identifier}}" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-{{section.settings.identifier}}" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

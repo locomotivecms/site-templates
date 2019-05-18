@@ -4,3 +4,14 @@
 */config/deploy.yml
 */TODO
 */dragonfly.log
+*/node_modules/*
+*/bundle/*
+*/public/fonts/*
+*/public/images/*
+*/public/javascripts/*
+*/public/stylesheets/*
+*/yarn.lock
+*/docky.yml
+*/dev.docker-compose.yml
+
+
